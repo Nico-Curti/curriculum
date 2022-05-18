@@ -1,0 +1,18 @@
+# tex
+*.aux
+*.bbl
+*.fdb_latexmk
+*.blg
+*.log
+*.out
+*.fls
+*.synctex.gz
+*.tex.backup
+*.bcf
+*.run.xml
+
+# directories
+[Ss]cripts/
+img/*.pdf_tex
+img/*.pdf
+img/Firma.png
