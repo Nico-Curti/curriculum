@@ -5,3 +5,6 @@
 # My Personal Curriculum
 
 In this folder I store the updated version of my CV ([pdf](https://github.com/Nico-Curti/curriculum/blob/main/curriculum.pdf)).
+
+| :warning: WARNING: The uploaded file does not include the signature image, i.e. `img/Firma.png` |
+| ----------------------------------------------------------------------------------------------- |

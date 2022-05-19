@@ -20,6 +20,14 @@
 
 \graphicspath{{./img/}}
 
+\newcommand\SignatureImage[2][]{%
+  \IfFileExists{#2}{%
+    \includegraphics[#1]{#2}%
+  }{%
+    \hfill\makebox[2.0in]{\hrulefill}
+  }%
+}%
+
 %\title{%
 % \includegraphics[width=0.1]{io.png}
 %}
@@ -359,9 +367,11 @@ Bologna, \today
 
 In fede
 
+\vspace*{0.5cm}
+
 \begin{figure}[h!]
   \begin{flushright}
-    \includegraphics[scale=0.5]{Firma.png}
+    \SignatureImage[scale=0.5]{Firma.png}
   \end{flushright}
 \end{figure}
 
