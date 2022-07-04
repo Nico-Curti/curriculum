@@ -6,7 +6,7 @@ out = curriculum
 
 
 all:$(file)
-	latexmk -synctex=1 -bibtex -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out)
+	latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out)
 	$(MAKE) clean
 
 .PHONY: clean
