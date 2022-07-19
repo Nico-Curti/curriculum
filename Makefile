@@ -6,7 +6,11 @@ out = curriculum
 
 
 all:$(file)
-	latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out)
+	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out)
+	$(MAKE) clean
+
+signed:
+	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out) -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\signed{1}\input{$(file)}'"
 	$(MAKE) clean
 
 .PHONY: clean
