@@ -13,6 +13,17 @@
 \usepackage{booktabs}
 %\usepackage{fontawesome} % beautiful icons!!
 \usepackage{fontawesome5} % very beautiful icons!!
+\usepackage{pifont} % more styles for bullet
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true, allcolors=Blue]{hyperref}
+
+\usepackage{siunitx}
+\usepackage{tikz}
+\newcommand*{\priority}[1]{\begin{tikzpicture}[scale=0.15]%
+    \draw[color=Blue] (0,0) circle (1);
+    \fill[fill opacity=0.5,fill=Blue] (0,0) -- (90:1) arc (90:90+#1*3.6:1) -- cycle;
+    \end{tikzpicture}}
+
 
 % Change color to blue
 \def\headcolor{\color[rgb]{0,0,0.5}}
@@ -104,7 +115,7 @@ Il Dr. Curti ha svolto numerose ricerche ed applicazioni nel campo dell'\emph{in
   \icon{0.05}{grant.png} \quad 2019 & Assegno di ricerca & \emph{Integrazione di dati clinici e multi-omici per la cura dei pazienti con patologie complesse e multisettoriali} (DIMES) \\
   \icon{0.05}{grant.png} \quad 2020 & Assegno di ricerca & \emph{Computer Vision ed Intelligenza artificiale per l'armonizzazione e l'analisi di imaging medico e dati multiomici} (DIMES) \\
   \icon{0.05}{grant.png} \quad 2021 & Assegno di ricerca & \emph{Machine learning ed Intelligenza artificiale per l'armonizzazione e l'analisi di dati multiomici del progetto HARMONY-PLUS} (DIMES) \\
-  \icon{0.05}{badge.png} \quad 2022 & Start Cup          & \emph{Finalista} della Start Cup - Emilia-Romagna 2022 \\
+  \icon{0.05}{badge.png} \quad 2022 & Start Cup          & \emph{Finalista} della Start Cup - Emilia-Romagna 2022 con il progetto imprenditoriale \emph{HIDRA - Human Interaction in Disease Records and Atlases}\\
 
 \end{tabular}
 
@@ -270,7 +281,6 @@ Il Dr. Curti ha svolto numerose ricerche ed applicazioni nel campo dell'\emph{in
 
 % \begin{itemize}
 
-
 %   \itemicon{0.05}{article.png} I. Budimir, E. Giampieri, E. Saccenti, M. S. Diez, M. Tarozzi, D. Dall'Olio, A. Merlotti, \textbf{N. Curti}, D. Remondini, G. Castellani, C. Sala, \emph{Intraspecies characterization of bacteria via evolutionary modeling of protein domains}, \emph{Scientific Reports}, \url{???} (2022 ???)
 
 %   \itemicon{0.05}{article.png} \textbf{N. Curti} \& G. Levi, E. Giampieri, G. Castellani, D. Remondini, \emph{DNetPRO: A network approach for low-dimensional signatures from high-throughput data}, \emph{Scientific Reports}, \url{???} (2022 ???)
@@ -285,7 +295,7 @@ Il Dr. Curti ha svolto numerose ricerche ed applicazioni nel campo dell'\emph{in
 
 %   \itemicon{0.05}{article.png} \textbf{N. Curti} \& G. Carlini, S. Valente, E. Giampieri, A. Merlotti, D. Dall'Olio, C. Sala, E. Marcelli, G. Castellani, G. Pasquinelli, \emph{Fully automated estimation of glomerular basement membrane thickness via active semi-supervised learning model}, \emph{???}, \url{???} (2022 ???)
 
-%   \itemicon{0.05}{article.png} ???, \emph{Impact of Freeze-Drying of Cord Blood Serum (CB-S) and Platelet Rich Plasma (CB-PRP) preparations on Growth Factor content and in vitro cell wound healing}, \emph{???}, \url{???} (2022 ???)
+%   \itemicon{0.05}{article.png} S. Valente, C. Ciavarella, G. Astolfi, E. Bergantin, \textbf{N. Curti}, M. Buzzi, L. Fontana, P. Versura, \emph{Impact of Freeze-Drying of Cord Blood (CB) Serum (S) and Platelet Rich Plasma (CB-PRP) preparations on Growth Factor content and in vitro cell wound healing}, \emph{International Journal of Molecular Sciences}, \url{???} (2022 ???)
 
 % \end{itemize}
 
@@ -325,47 +335,28 @@ Il Dr. Curti ha svolto numerose ricerche ed applicazioni nel campo dell'\emph{in
 \vspace*{0.5cm}
 \section*{\scshape{Open Source Software}}
 
-\begin{tabular}{llp{12cm}}
+\begin{tabular}{clp{11cm}l}
 
-  \icon{0.05}{cpp.png} \icon{0.05}{python.png} & \scshape{DNetPRO} & \emph{Discriminant Analysis with Network PROcessing} \\
-
-  \icon{0.05}{python.png} & \scshape{NumPyNet} & \emph{Neural Networks library in pure numpy} \\
-
-  \icon{0.05}{cpp.png} & \scshape{Openslide} & \emph{C library for reading virtual slide images} \\
-
-  \icon{0.05}{cpp.png} \icon{0.05}{python.png} & \scshape{Byron} & \emph{Build your own neural network} \\
-
-  \icon{0.05}{cpp.png} \icon{0.05}{python.png} & \scshape{rFBP} & \emph{Replicated Focusing Belief Propagation algorithm} \\
-
-  \icon{0.05}{cpp.png} \icon{0.05}{python.png} & \scshape{plasticity} & \emph{Unsupervised Neural Networks with biological-inspired learning rules} \\
-
-  \icon{0.05}{cpp.png} \icon{0.05}{python.png} & \scshape{scorer} & \emph{Machine Learning Scorer Library} \\
-
-  \icon{0.05}{cpp.png} & \scshape{ParseArgs} & \emph{Simple command line parser in C++} \\
-
-  \icon{0.05}{cpp.png} & \scshape{easyDAG} & \emph{Simple template DAG scheduler in c++} \\
-
-  \icon{0.05}{cpp.png} & \scshape{genetic} & \emph{Examples about genetic algorithms for parallel computing} \\
-
-  \icon{0.035}{bash.jpg} \icon{0.1}{pwsh.png} & \scshape{shut} & \emph{Shell Utilities and Installers for no root users} \\
-
-  \icon{0.05}{python.png} & \scshape{cardio} & \emph{Pulse oximetry data processing and classification} \\
-
-  \icon{0.05}{python.png} & \scshape{BlendNet} & \emph{Network viewer with Blender support} \\
-
-  \icon{0.05}{cpp.png} \icon{0.05}{python.png} & \scshape{SysDyn} & \emph{System Dynamics script utilities} \\
-
-  \icon{0.05}{cpp.png} & \scshape{nocs} & \emph{NOCS (Not Only Colliding Spheres) exact 2D gas dynamics framework} \\
-
-  \icon{0.05}{cpp.png} \icon{0.05}{python.png} & \scshape{rSGD} & \emph{Replicated Stochastic Gradient Descent algorithm} \\
-
-  \icon{0.05}{cpp.png} \icon{0.05}{python.png} & \scshape{Walkers} & \emph{Random Walk and Optimizer Simulator} \\
-
-  \icon{0.05}{python.png} & \scshape{CryptoSocket} & \emph{TCP/IP Client Server with RSA cryptography} \\
-
-  \icon{0.05}{python.png} & \scshape{FiloBluService} & \emph{FiloBlu Service Manager for text message processing} \\
-
-  \icon{0.05}{python.png} & \scshape{anonymize-slide} & \emph{Delete the label from a whole-slide image} \\
+  \icon{0.025}{cpp.png} \icon{0.025}{python.png} & \scshape{DNetPRO}         & \emph{Discriminant Analysis with Network PROcessing}                        & \href{https://github.com/Nico-Curti/DNetPRO}{github} \\
+  \icon{0.025}{python.png}                       & \scshape{NumPyNet}        & \emph{Neural Networks library in pure numpy}                                & \href{https://github.com/Nico-Curti/NumPyNet}{github} \\
+  \icon{0.025}{cpp.png} \icon{0.025}{python.png} & \scshape{Openslide}       & \emph{C library for reading virtual slide images}                           & \href{https://github.com/Nico-Curti/Openslide}{github} \\
+  \icon{0.025}{cpp.png} \icon{0.025}{python.png} & \scshape{Byron}           & \emph{Build your own neural network}                                        & \href{https://github.com/Nico-Curti/Byron}{github} \\
+  \icon{0.025}{cpp.png} \icon{0.025}{python.png} & \scshape{rFBP}            & \emph{Replicated Focusing Belief Propagation algorithm}                     & \href{https://github.com/Nico-Curti/rFBP}{github} \\
+  \icon{0.025}{cpp.png} \icon{0.025}{python.png} & \scshape{plasticity}      & \emph{Unsupervised Neural Networks with biological-inspired learning rules} & \href{https://github.com/Nico-Curti/plasticity}{github} \\
+  \icon{0.025}{cpp.png} \icon{0.025}{python.png} & \scshape{scorer}          & \emph{Machine Learning Scorer Library}                                      & \href{https://github.com/Nico-Curti/scorer}{github} \\
+  \icon{0.025}{cpp.png}                          & \scshape{ParseArgs}       & \emph{Simple command line parser in C++}                                    & \href{https://github.com/Nico-Curti/ParseArgs}{github} \\
+  \icon{0.025}{cpp.png}                          & \scshape{easyDAG}         & \emph{Simple template DAG scheduler in c++}                                 & \href{https://github.com/Nico-Curti/easyDAG}{github} \\
+  \icon{0.025}{cpp.png}                          & \scshape{genetic}         & \emph{Examples about genetic algorithms for parallel computing}             & \href{https://github.com/Nico-Curti/genetic}{github} \\
+  \icon{0.020}{bash.jpg} \icon{0.05}{pwsh.png}   & \scshape{shut}            & \emph{Shell Utilities and Installers for no root users}                     & \href{https://github.com/Nico-Curti/shut}{github} \\
+  \icon{0.025}{python.png}                       & \scshape{cardio}          & \emph{Pulse oximetry data processing and classification}                    & \href{https://github.com/Nico-Curti/cardio}{github} \\
+  \icon{0.025}{python.png}                       & \scshape{BlendNet}        & \emph{Network viewer with Blender support}                                  & \href{https://github.com/Nico-Curti/BlendNet}{github} \\
+  \icon{0.025}{cpp.png} \icon{0.025}{python.png} & \scshape{SysDyn}          & \emph{System Dynamics script utilities}                                     & \href{https://github.com/Nico-Curti/SysDyn}{github} \\
+  \icon{0.025}{cpp.png}                          & \scshape{nocs}            & \emph{NOCS (Not Only Colliding Spheres) exact 2D gas dynamics framework}    & \href{https://github.com/Nico-Curti/nocs}{github} \\
+  \icon{0.025}{cpp.png} \icon{0.025}{python.png} & \scshape{rSGD}            & \emph{Replicated Stochastic Gradient Descent algorithm}                     & \href{https://github.com/Nico-Curti/rSGD}{github} \\
+  \icon{0.025}{cpp.png} \icon{0.025}{python.png} & \scshape{Walkers}         & \emph{Random Walk and Optimizer Simulator}                                  & \href{https://github.com/Nico-Curti/Walkers}{github} \\
+  \icon{0.025}{python.png}                       & \scshape{CryptoSocket}    & \emph{TCP/IP Client Server with RSA cryptography}                           & \href{https://github.com/Nico-Curti/CryptoSocket}{github} \\
+  \icon{0.025}{python.png}                       & \scshape{FiloBluService}  & \emph{FiloBlu Service Manager for text message processing}                  & \href{https://github.com/Nico-Curti/FiloBluService}{github} \\
+  \icon{0.025}{python.png}                       & \scshape{anonymize-slide} & \emph{Delete the label from a whole-slide image}                            & \href{https://github.com/Nico-Curti/anonymize-slide}{github} \\
 
 \end{tabular}
 
@@ -426,43 +417,34 @@ In collaborazione con il prof. Gianandrea Pasquinelli, ho sviluppato un modello 
 \vspace*{0.5cm}
 \section*{\scshape{Competenze Informatiche}}
 
-\begin{itemize}
+\begin{tabular}{lp{3cm}cl}
 
-  \itemicon{0.05}{cpp.png} \textbf{C/C++} : ottima;
+  \icon{0.05}{cpp.png}     & \textbf{C/C++}       & \priority{100}\priority{100}\priority{100}\priority{100}\priority{100} & ottima        \\
+  \icon{0.05}{python.png}  & \textbf{Python}      & \priority{100}\priority{100}\priority{100}\priority{100}\priority{100} & ottima        \\
+  \icon{0.075}{latex.png}  & \LaTeX               & \priority{100}\priority{100}\priority{100}\priority{100}\priority{50}  & ottima        \\
+  \icon{0.04}{bash.jpg}    & \textbf{Bash}        & \priority{100}\priority{100}\priority{100}\priority{100}\priority{0}   & più che buona \\
+  \icon{0.1}{pwsh.png}     & \textbf{Powershell}  & \priority{100}\priority{100}\priority{100}\priority{100}\priority{0}   & più che buona \\
+  \icon{0.15}{matlab.png}  & \textbf{Matlab}      & \priority{100}\priority{100}\priority{100}\priority{0}\priority{0}     & buona         \\
+  \icon{0.05}{html.png}    & \textbf{HTML/CSS}    & \priority{100}\priority{100}\priority{100}\priority{0}\priority{0}     & buona         \\
+  \icon{0.05}{js.png}      & \textbf{JavaScript}  & \priority{100}\priority{100}\priority{100}\priority{0}\priority{0}     & buona         \\
+  \icon{0.05}{java.png}    & \textbf{Java}        & \priority{100}\priority{100}\priority{100}\priority{0}\priority{0}     & buona         \\
+  \icon{0.05}{android.png} & \textbf{Android}     & \priority{100}\priority{100}\priority{100}\priority{0}\priority{0}     & buona         \\
 
-  \itemicon{0.05}{python.png} \textbf{Python} : ottima;
+\end{tabular}
 
-  \itemicon{.075}{latex.png} \LaTeX : più che buona;
-
-  \itemicon{0.04}{bash.jpg} \textbf{Bash} : più che buona;
-
-  \itemicon{0.1}{pwsh.png} \textbf{Powershell} : più che buona;
-
-  \itemicon{.15}{matlab.png} \textbf{Matlab} : buona;
-
-  \itemicon{0.05}{html.png} \textbf{HTML/CSS} : buona;
-
-  \itemicon{0.05}{js.png} \textbf{JavaScript} : buona;
-
-  \itemicon{0.05}{java.png} \textbf{Java} : buona;
-
-  \itemicon{0.05}{android.png} \textbf{Android} : buona;
-
-\end{itemize}
-
-Inoltre ho avuto modo di utilizzare i linguaggi di programmazione \emph{Julia}, \emph{Scala}, software di rendering grafico come \emph{Blender} e \emph{MeshMixer}, software di realtà virtuale come \emph{SteamVR}.
+\vspace*{0.5cm}
+\noindent Inoltre ho avuto modo di utilizzare i linguaggi di programmazione \emph{Julia}, \emph{Scala}, software di rendering grafico come \emph{Blender} e \emph{MeshMixer}, software di realtà virtuale come \emph{SteamVR}.
 
 
 \vspace*{0.5cm}
 \section*{\scshape{Competenze Linguistiche}}
 
-\begin{itemize}
+\begin{tabular}{lp{3cm}cl}
 
-  \itemicon{.05}{ita.png}\textbf{Italiano:} Madrelingua
+  \icon{.05}{ita.png} & \textbf{Italiano:} & \priority{100}\priority{100}\priority{100}\priority{100}\priority{100} & Madrelingua \\
+  \icon{.05}{eng.png} & \textbf{Inglese:}  & \priority{100}\priority{100}\priority{100}\priority{100}\priority{0}   & livello B2  \\
 
-  \itemicon{.05}{eng.png}\textbf{Inglese:} livello B2
-
-\end{itemize}
+\end{tabular}
 
 
 \vspace*{0.5cm}
