@@ -10,5 +10,6 @@ In this folder I store the updated version of my CV ([pdf](https://github.com/Ni
 | ----------------------------------------------------------------------------------------------- |
 
 | :triangular_flag_on_post: Note |
+| :----------------------------- |
 | The automated generation of pubblication report is obtained by `make pubblicazioni`, exporting the *Pubblicazioni* section from the CV |
 | **The pubblication report is automatically signed!* |
