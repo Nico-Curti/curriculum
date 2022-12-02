@@ -8,3 +8,7 @@ In this folder I store the updated version of my CV ([pdf](https://github.com/Ni
 
 | :warning: WARNING: The uploaded file does not include the signature image, i.e. `img/Firma.png` |
 | ----------------------------------------------------------------------------------------------- |
+
+| :triangular_flag_on_post: Note |
+| The automated generation of pubblication report is obtained by `make pubblicazioni`, exporting the *Pubblicazioni* section from the CV |
+| **The pubblication report is automatically signed!* |
