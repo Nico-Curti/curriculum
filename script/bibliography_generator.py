@@ -17,8 +17,8 @@ with open(filename, 'r') as fp:
 
 _, *sections = SECTIONS_RE.split(data)
 sections_name = SECTIONS_NAME_RE.findall(data)
-assert 'Pubblicazioni' in sections_name
-idx = sections_name.index('Pubblicazioni')
+assert 'Publications' in sections_name
+idx = sections_name.index('Publications')
 bibliography = sections[idx]
 
 HEADER = r'''
@@ -29,7 +29,7 @@ HEADER = r'''
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[italian]{babel}
+\usepackage[english]{babel}
 \usepackage{graphicx}
 
 %\usepackage[backend=biber]{biblatex}
@@ -80,7 +80,7 @@ HEADER = r'''
 }
 
 \pagestyle{fancy}
-\lhead{Curriculum vitae e scientifico-professionale}
+\lhead{Curriculum vitae}
 \rhead{Nico Curti}
 \rfoot{\thepage}
 \cfoot{}
@@ -95,14 +95,12 @@ HEADER = r'''
 
 \maketitle
 
-\section*{\scshape{Pubblicazioni}}
+\section*{\scshape{Publications}}
 '''
 
 TAIL = r'''
 \begin{flushright}
 Bologna, \today
-
-In fede
 
 \vspace*{0.5cm}
 
@@ -120,7 +118,7 @@ In fede
 \end{document}
 '''
 
-with open('../pubblicazioni.tex', 'w') as fp:
+with open('../publications.tex', 'w') as fp:
     
   fp.write(HEADER)
   fp.write(bibliography)
