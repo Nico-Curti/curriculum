@@ -7,30 +7,30 @@ out = curriculum
 pub = publications.tex
 pub_out = publications
 
-metrics = $(shell python script/metrics.py)
-Npapers = $(shell echo $(metrics) | cut -d' ' -f 1)
-citations = $(shell echo $(metrics) | cut -d' ' -f 2)
-hindex = $(shell echo $(metrics) | cut -d' ' -f 3)
-
 all:$(file)
-	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out) -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\papers{$(Npapers)}\def\citations{$(citations)}\def\hindex{$(hindex)}\input{$(file)}'"
+	cd script && python metrics.py && cd ..
+	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out) -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\input{$(file)}'"
 	$(MAKE) clean
 
 signed:
-	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out) -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\signed{1}\def\papers{$(Npapers)}\def\citations{$(citations)}\def\hindex{$(hindex)}\input{$(file)}'"
+	cd script && python metrics.py && cd ..
+	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out) -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\signed{1}\input{$(file)}'"
 	$(MAKE) clean
 
 eng:
-	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out)_eng -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\eng{1}\def\papers{$(Npapers)}\def\citations{$(citations)}\def\hindex{$(hindex)}\input{$(file)}'"
+	cd script && python metrics.py && cd ..
+	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out)_eng -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\eng{1}\input{$(file)}'"
 	$(MAKE) clean
 
 eng-signed:
-	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out)_eng -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\signed{1}\def\eng{1}\def\papers{$(Npapers)}\def\citations{$(citations)}\def\hindex{$(hindex)}\input{$(file)}'"
+	cd script && python metrics.py && cd ..
+	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out)_eng -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\signed{1}\def\eng{1}\input{$(file)}'"
 	$(MAKE) clean
 
 publications:
+	cd script && python metrics.py && cd ..
 	cd script && python bibliography_generator.py && cd ..
-	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(pub)) -jobname=$(pub_out) -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\signed{1}\def\papers{$(Npapers)}\def\citations{$(citations)}\def\hindex{$(hindex)}\input{$(pub)}'"
+	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(pub)) -jobname=$(pub_out) -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\signed{1}\input{$(pub)}'"
 	$(MAKE) clean
 
 .PHONY: clean

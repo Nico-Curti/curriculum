@@ -25,6 +25,8 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage[colorlinks=true, allcolors=Blue]{hyperref}
 
+\usepackage[most]{tcolorbox}
+\usepackage{wrapfig}
 \usepackage{siunitx}
 \usepackage{tikz}
 \newcommand*{\priority}[1]{\begin{tikzpicture}[scale=0.15]%
@@ -82,18 +84,17 @@
 \begin{document}
 
 \maketitle
-
-\begin{tabular}{lp{3cm}p{3cm}p{3cm}}
-\textcolor{Blue}{\Large{\textbf{\scshape{Scholar Metrics}}}} &
-\icon{0.03}{article.png} \textcolor{Blue}{\scshape{Articles:}} \papers &
-\icon{0.03}{citations.png} \textcolor{Blue}{\scshape{Citations:}} \citations &
-\icon{0.03}{scholar.png} \textcolor{Blue}{\scshape{H-Index:}} \hindex \\
-\end{tabular}
+\justifying
 
 \section*{\scshape{Storia accademica e scientifica}}
 
-\justifying
+\begin{wrapfigure}{L}{0.4\textwidth}
+  \tcbincludegraphics[colframe=white!10!black,
+                      colback=white!10,
+                      width=\linewidth]{metrics.png}
+\end{wrapfigure}
 
+\noindent
 \input{./sections/academic_history.tex}
 
 \newpage
