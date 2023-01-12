@@ -31,7 +31,9 @@ jobs:
 
     - name: Install testing dependencies
       run: |
-        python3 -m pip install scholarly pandas seaborn matplotlib
+        python3 -m pip install scholarly
+        python3 -m pip install pandas seaborn matplotlib
+        python3 -m pip install habanero
 
     - name: Install latexmk
       shell: bash
