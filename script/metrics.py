@@ -59,7 +59,7 @@ with sns.plotting_context('paper', font_scale=2):
   m, M = ax1.get_ylim()
   _ = ax1.set_yticks(range(0, int(M)+1, int(M)//2))
   _ = ax1.axhline(y=M//2, color='lightgray', linestyle='-', alpha=.5)
-  _ = ax1.axhline(y=M,    color='lightgray', linestyle='-', alpha=.5)
+  _ = ax1.axhline(y=int(M),    color='lightgray', linestyle='-', alpha=.5)
   sns.despine(ax=ax1, offset=1, top=True, right=True, bottom=False, left=False)
 
   m, M = cite['citations'].min(), cite['citations'].max()
@@ -135,14 +135,14 @@ with sns.plotting_context('paper', font_scale=2):
            rotation=0,
            transform=ax2.transAxes)
 
-  ax2.text(0.45, -0.3, 'Articles:',
+  ax2.text(0.35, -0.3, 'Articles:',
            horizontalalignment='left',
            verticalalignment='center',
            fontweight='bold',
            fontsize=12,
            rotation=0,
            transform=ax2.transAxes)
-  ax2.text(0.6, -0.3, '{}'.format(publications),
+  ax2.text(0.5, -0.3, '{}'.format(publications),
            horizontalalignment='left',
            verticalalignment='center',
            fontweight='normal',
