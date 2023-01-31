@@ -74,11 +74,32 @@
 \rhead{Nico Curti}
 \rfoot{\thepage}
 \cfoot{}
+
+\newcounter{itemnumber}
+
+\newenvironment{paperlist}{%
+  \setcounter{itemnumber}{0}%
+  \begin{list}{}{}%
+}{\end{list}}
+
 \renewcommand{\headrulewidth}{0.4pt}
 \newcommand{\quotes}[1]{``#1''}
 \newcommand{\itemicon}[2]{\item[{\includegraphics[scale=#1]{#2}}]}
-\newcommand{\enumicon}[2]{\item[{\includegraphics[scale=#1]{#2}}]}
+\newcommand{\enumicon}[2]{% Image, Number
+\stepcounter{itemnumber}%
+\item[{\includegraphics[scale=#1]{#2}}] \theitemnumber.
+}
 \newcommand{\icon}[2]{\includegraphics[scale=#1]{#2}}
+
+\newcommand{\legend}[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\newcommand{\journal}[1]{\underline{#1}}
+\newcommand{\paperTitle}[1]{\emph{#1}}
 
 
 \begin{document}
@@ -86,7 +107,11 @@
 \maketitle
 \justifying
 
-\section*{\scshape{Storia accademica e scientifica}}
+\IfLanguageName{italian} {
+  \section*{\scshape{Storia accademica e scientifica}}
+} {
+  \section*{\scshape{Academic History}}
+}
 
 \begin{wrapfigure}{L}{0.4\textwidth}
   \tcbincludegraphics[colframe=white!10!black,
@@ -186,6 +211,8 @@
 
     \icon{0.05}{education.png} \quad 2022                     & Elective course \emph{AI4Medicine} at the Dept. of Experimental, Diagnostic and Specialty Medicine of Bologna University. \\
 
+    \icon{0.05}{education.png} \quad 2023                     & Tutor at the course \emph{Progetto Lauree Scientifiche Teoria dei network e intelligenza artificiale tra fisica, biologia e social media} at the Dept. of Physics and Astronomy of Bologna University (12 hours). \\
+
   \end{tabular}
 }
 
@@ -243,6 +270,8 @@
 
   \itemicon{0.03}{conference.png} \Partecipazione \al seminario \emph{Occhio non vede Cuore non duole}, \il 13/12/2022, \lavoro \emph{Intelligenza Artificiale: cos'è e a cosa serve}.
 
+  \itemicon{0.03}{conference.png} \PartecipazioneConferenza \emph{Next-AIM - General Meeting}, \dal 13/02/2023 \al 15/02/2023, \lavoro \emph{Low-dimensional signatures from high-dimensional data: the DNetPRO algorithm}.
+
 \end{itemize}
 
 
@@ -279,8 +308,6 @@
   \icon{0.05}{degree.png}        \quad 2022 & Stefano Bianchi       & LM-DM270 & \emph{Introducing CHIMeRA: From the Development of a Comprehensive Biomedical Database to the Analysis of its Sub-Components}\\
   \icon{0.05}{degree.png}        \quad 2022 & Daniele Buschi        & LM-DM270 & \emph{Application of Active and Transfer Learning to wound image segmentation}\\
   %\icon{0.05}{graduationcap.png} \quad 2022 & Andrea Corvina        & L-DM270  & \emph{}\\
-  %\icon{0.05}{degree.png}        \quad 2022 & Giancarlo Cuticchia   & LM-DM270 & \emph{}\\
-  %\icon{0.05}{degree.png}        \quad 2022 & Chiara Vece           & LM-DM270 & \emph{}\\
   %\icon{0.05}{degree.png}        \quad 2023 & Sara Peluso           & LM-DM270 & \emph{}\\
 
 \end{tabular}
@@ -295,130 +322,131 @@
 
 \section*{\scshape{Publications}}
 
-\begin{enumerate}
+\begin{paperlist}
 
-  \enumicon{0.05}{article.png}1. A. Bazzani, A. Fabbri, C. Mizzi, S. Rambaldi, F. Bertini, S. Sinigardi, \textbf{N. Curti}, R. Luzi, G. Venturi, D. Micheli, G. Muratore and A. Vannelli, \emph{Unraveling pedestrian mobility on a road network using ICTs data during great tourist events}, \emph{EPJ Data Science}, \url{10.1140/epjds/s13688-018-0168-2} (2018 Oct 22)
+  \enumicon{0.05}{article.png} A. Bazzani, A. Fabbri, C. Mizzi, S. Rambaldi, F. Bertini, S. Sinigardi, \textbf{N. Curti}, R. Luzi, G. Venturi, D. Micheli, G. Muratore and A. Vannelli, \paperTitle{Unraveling pedestrian mobility on a road network using ICTs data during great tourist events}, \journal{EPJ Data Science}, \url{10.1140/epjds/s13688-018-0168-2} (2018 Oct 22)
 
-  \enumicon{0.05}{article.png}2. \textbf{N. Curti} \& E. Giampieri, A. Ferraro, M. C. Vistoli, E. Ronchieri, D. Cesini, B. Martelli, D. C. Duma and G. Castellani, \emph{Cross-Environment comparison of a bioinformatics pipeline: perspectives for hybrid computations}, \emph{Euro-Par 2018: Parallel Processing Workshops}, \url{10.1007/978-3-030-10549-5_50} (2018 Dec 12)
+  \enumicon{0.05}{article.png} \textbf{N. Curti} \& E. Giampieri, A. Ferraro, M. C. Vistoli, E. Ronchieri, D. Cesini, B. Martelli, D. C. Duma and G. Castellani, \paperTitle{Cross-Environment comparison of a bioinformatics pipeline: perspectives for hybrid computations}, \journal{Euro-Par 2018: Parallel Processing Workshops}, \url{10.1007/978-3-030-10549-5_50} (2018 Dec 12)
 
-  \enumicon{0.05}{article.png}3. V. Boccardi, L. Paolacci, D. Remondini, E. Giampieri, G. Poli, \textbf{N. Curti}, R. Cecchetti, A. Villa, S. Brancorsini, P. Mecocci, \emph{Cognitive decline and Alzheimer's disease in the old age: sex influence on a \quotes{cytokinome signature}}, \emph{Journal of Alzheimer's Disease}, \url{10.3233/JAD-190480} (2019 Nov 26)
+  \enumicon{0.05}{article.png} V. Boccardi, L. Paolacci, D. Remondini, E. Giampieri, G. Poli, \textbf{N. Curti}, R. Cecchetti, A. Villa, S. Brancorsini, P. Mecocci, \paperTitle{Cognitive decline and Alzheimer's disease in the old age: sex influence on a \quotes{cytokinome signature}}, \journal{Journal of Alzheimer's Disease}, \url{10.3233/JAD-190480} (2019 Nov 26)
 
-  \enumicon{0.05}{article.png}4. M. Malvisi \& \textbf{N. Curti}, D. Remondini, F. Palazzo, J. L. Williams, G. Pagnacco, G. Minozzi, \emph{Combinatorial Discriminant Analysis applied to RNAseq data reveals a set of 10 transcripts as signatures of infection of cattle with Mycobacterium avium subsp. paratuberculosis}, \emph{Animals}, \url{10.3390/ani10020253} (2020 Feb 5)
+  \enumicon{0.05}{article.png} M. Malvisi \& \textbf{N. Curti}, D. Remondini, F. Palazzo, J. L. Williams, G. Pagnacco, G. Minozzi, \paperTitle{Combinatorial Discriminant Analysis applied to RNAseq data reveals a set of 10 transcripts as signatures of infection of cattle with Mycobacterium avium subsp. paratuberculosis}, \journal{Animals}, \url{10.3390/ani10020253} (2020 Feb 5)
 
-  \enumicon{0.05}{article.png}5. L. Dall'Olio, \textbf{N. Curti}, D. Remondini, Y. Safi Harb, F. W. Asselbergs, G. Castellani, H. Uh, \emph{Prediction of vascular ageing based on smartphone acquired PPG signals}, \emph{Scientific Reports}, \url{10.1038/s41598-020-76816-6} (2020 Nov 12)
+  \enumicon{0.05}{article.png} L. Dall'Olio, \textbf{N. Curti}, D. Remondini, Y. Safi Harb, F. W. Asselbergs, G. Castellani, H. Uh, \paperTitle{Prediction of vascular ageing based on smartphone acquired PPG signals}, \journal{Scientific Reports}, \url{10.1038/s41598-020-76816-6} (2020 Nov 12)
 
-  \enumicon{0.05}{article.png}6. D. Dall'Olio \& \textbf{N. Curti}, E. Fonzi, C. Sala, D. Remondini, G. Castellani, E. Giampieri, \emph{Impact of Concurrency on the Performance of a Whole Exome Sequencing Pipeline}, \emph{BMC Bioinformatics}, \url{10.1186/s12859-020-03780-3} (2021 Feb 9)
+  \enumicon{0.05}{article.png} D. Dall'Olio \& \textbf{N. Curti}, E. Fonzi, C. Sala, D. Remondini, G. Castellani, E. Giampieri, \paperTitle{Impact of Concurrency on the Performance of a Whole Exome Sequencing Pipeline}, \journal{BMC Bioinformatics}, \url{10.1186/s12859-020-03780-3} (2021 Feb 9)
 
-  \enumicon{0.05}{article.png}7. \textbf{N. Curti} \& E. Giampieri, F. Guaraldi, F. Bernabei, L. Cercenelli, G. Castellani, P. Versusa, E. Marcelli, \emph{A fully automated pipeline for a robust conjunctival hyperemia estimation}, \emph{Applied Sciences}, \url{10.3390/app11072978} (2021 Mar 26)
+  \enumicon{0.05}{article.png} \textbf{N. Curti} \& E. Giampieri, F. Guaraldi, F. Bernabei, L. Cercenelli, G. Castellani, P. Versusa, E. Marcelli, \paperTitle{A fully automated pipeline for a robust conjunctival hyperemia estimation}, \journal{Applied Sciences}, \url{10.3390/app11072978} (2021 Mar 26)
 
-  \enumicon{0.05}{article.png}8. R. Biondi \& \textbf{N. Curti}, F. Coppola, E. Giampieri, G. Vara, M. Bartoletti, A. Cattabriga, M. A. Cocozza, F. Ciccarese, C. De Benedittis, L. Cercenelli, B. Bortolani, E. Marcelli, L. Pierotti, L. Strigari, P. Viale, R. Golfieri and G. Castellani, \emph{Classification Performance for COVID patient prognosis from automatic AI segmentation – a single center study}, \emph{Applied Science}, \url{10.3390/app11125438} (2021 June 11)
+  \enumicon{0.05}{article.png} R. Biondi \& \textbf{N. Curti}, F. Coppola, E. Giampieri, G. Vara, M. Bartoletti, A. Cattabriga, M. A. Cocozza, F. Ciccarese, C. De Benedittis, L. Cercenelli, B. Bortolani, E. Marcelli, L. Pierotti, L. Strigari, P. Viale, R. Golfieri and G. Castellani, \paperTitle{Classification Performance for COVID patient prognosis from automatic AI segmentation – a single center study}, \journal{Applied Science}, \url{10.3390/app11125438} (2021 June 11)
 
-  \enumicon{0.05}{article.png}9. S. Valente, \textbf{N. Curti}, E. Giampieri, V. Randi, C. Donadei, M. Buzzi, P. Versura, \emph{Impact of blood source and component manufacturing on neurotrophin content and in vitro cell wound healing}, \emph{Blood Transfusion}, \url{10.2450/2021.0116-21} (2021 Aug 3)
+  \enumicon{0.05}{article.png} S. Valente, \textbf{N. Curti}, E. Giampieri, V. Randi, C. Donadei, M. Buzzi, P. Versura, \paperTitle{Impact of blood source and component manufacturing on neurotrophin content and in vitro cell wound healing}, \journal{Blood Transfusion}, \url{10.2450/2021.0116-21} (2021 Aug 3)
 
-  \enumicon{0.05}{article.png}10. L. Cercenelli, M. Zoli, B. Bortolani, \textbf{N. Curti}, D. Gori, A. Rustici, D. Mazzatenta, E. Marcelli, \emph{3D virtual modeling for morphological characterization of pituitary tumors: preliminary results on its predictive role in tumor resection rate}, \emph{Applied Sciences}, \url{10.3390/app12094275} (2022 Apr 23)
+  \enumicon{0.05}{article.png} L. Cercenelli, M. Zoli, B. Bortolani, \textbf{N. Curti}, D. Gori, A. Rustici, D. Mazzatenta, E. Marcelli, \paperTitle{3D virtual modeling for morphological characterization of pituitary tumors: preliminary results on its predictive role in tumor resection rate}, \journal{Applied Sciences}, \url{10.3390/app12094275} (2022 Apr 23)
 
-  \enumicon{0.05}{article.png}11. L. Spagnoli, M. F. Morrone, E. Giampieri, G. Paolani, M. Santoro, \textbf{N. Curti}, F. Coppola, F. Ciccarese, G. Vara, N. Brandi, R. Golfieri, P. Viale, M. Bartoletti, L. Strigari, \emph{Outcome prediction for Sars-CoV-2 patients using machine learning modelling of clinical, radiological and radiomic features derived from chest CT images}, \emph{Applied Sciences}, \url{10.3390/app12094493} (2022 Apr 28)
+  \enumicon{0.05}{article.png} L. Spagnoli, M. F. Morrone, E. Giampieri, G. Paolani, M. Santoro, \textbf{N. Curti}, F. Coppola, F. Ciccarese, G. Vara, N. Brandi, R. Golfieri, P. Viale, M. Bartoletti, L. Strigari, \paperTitle{Outcome prediction for Sars-CoV-2 patients using machine learning modelling of clinical, radiological and radiomic features derived from chest CT images}, \journal{Applied Sciences}, \url{10.3390/app12094493} (2022 Apr 28)
 
-  \enumicon{0.05}{article.png}12. G. Filitto, F. Coppola, \textbf{N. Curti$^\dagger$}, E. Giampieri, D. Dall’Olio, A. Merlotti, A. Cattabriga, M.A. Cocozza, M.T. Tomassoni, D. Remondini, L. Pierotti, L. Strigari, D. Cuicchi, A. Guido, K. Rihawi, A. D'Errico, F. Di Fabio, G. Poggioli, A.G. Morganti, L. Ricciardiello, R. Golfieri, G. Castellani, \emph{Automated Prediction of the Response to Neoadjuvant Chemoradiotherapy in Patients Affected by Rectal Cancer}, \emph{Cancers}, \url{10.3390/cancers14092231} (2022 Apr 29)
+  \enumicon{0.05}{article.png} G. Filitto, F. Coppola, \textbf{N. Curti$^\dagger$}\legend{$^\dagger$ Corresponding author.}, E. Giampieri, D. Dall’Olio, A. Merlotti, A. Cattabriga, M.A. Cocozza, M.T. Tomassoni, D. Remondini, L. Pierotti, L. Strigari, D. Cuicchi, A. Guido, K. Rihawi, A. D'Errico, F. Di Fabio, G. Poggioli, A.G. Morganti, L. Ricciardiello, R. Golfieri, G. Castellani, \paperTitle{Automated Prediction of the Response to Neoadjuvant Chemoradiotherapy in Patients Affected by Rectal Cancer}, \journal{Cancers}, \url{10.3390/cancers14092231} (2022 Apr 29)
 
-  \enumicon{0.05}{article.png}13. L. Squadrani \& \textbf{N. Curti}, E. Giampieri, D. Remondini, B. Blais, G. Castellani, \emph{Effectiveness of biological inspired neural network models in learning and patterns memorization}, \emph{Entropy}, \url{10.3390/e24050682} (2022 May 12)
+  \enumicon{0.05}{article.png} L. Squadrani \& \textbf{N. Curti}, E. Giampieri, D. Remondini, B. Blais, G. Castellani, \paperTitle{Effectiveness of biological inspired neural network models in learning and patterns memorization}, \journal{Entropy}, \url{10.3390/e24050682} (2022 May 12)
 
-  \enumicon{0.05}{article.png}14. G. Carlini \& \textbf{N. Curti}, S. Strolin, S. Fanti, D. Remondini, C. Nanni, L. Strigari, and G. Castellani, \emph{Prediction of overall survival in cervical cancer patients using PET/CT radiomic features}, \emph{Applied Science}, \url{10.3390/app12125946} (2022 June 10)
+  \enumicon{0.05}{article.png} G. Carlini \& \textbf{N. Curti}, S. Strolin, S. Fanti, D. Remondini, C. Nanni, L. Strigari, and G. Castellani, \paperTitle{Prediction of overall survival in cervical cancer patients using PET/CT radiomic features}, \journal{Applied Science}, \url{10.3390/app12125946} (2022 June 10)
 
-  \enumicon{0.05}{article.png}15. E. Dika \& \textbf{N. Curti}, E. Giampieri, G. veronesi, C. Misciali, C. Ricci, G. Castellani, A. Patrizi, E. Marcelli, \emph{Advantages of manual and automatic computer-aided compared to traditional histopathological diagnosis of melanoma: a pilot study}, \emph{Pathology - Research and Practice}, \url{10.1016/j.prp.2022.154014} (2022 July 8)
+  \enumicon{0.05}{article.png} E. Dika \& \textbf{N. Curti}, E. Giampieri, G. veronesi, C. Misciali, C. Ricci, G. Castellani, A. Patrizi, E. Marcelli, \paperTitle{Advantages of manual and automatic computer-aided compared to traditional histopathological diagnosis of melanoma: a pilot study}, \journal{Pathology - Research and Practice}, \url{10.1016/j.prp.2022.154014} (2022 July 8)
 
-  \itemicon{0.05}{article.png}16. \textbf{N. Curti} \& G. Veronesi, E. Dika, C. Misciali, E. Marcelli, E. Giampieri, \emph{Breslow thickness: geometric interpretation, potential pitfalls, and computer automated estimation}, \emph{Pathology - Research and Practice}, \url{10.1016/j.prp.2022.154117} (2022 Sep 5)
+  \enumicon{0.05}{article.png} \textbf{N. Curti} \& G. Veronesi, E. Dika, C. Misciali, E. Marcelli, E. Giampieri, \paperTitle{Breslow thickness: geometric interpretation, potential pitfalls, and computer automated estimation}, \journal{Pathology - Research and Practice}, \url{10.1016/j.prp.2022.154117} (2022 Sep 5)
 
-  \enumicon{0.05}{article.png}17. S. Valente, C. Ciavarella, G. Astolfi, E. Bergantin, \textbf{N. Curti}, M. Buzzi, L. Fontana, P. Versura, \emph{Impact of Freeze-Drying of Cord Blood (CB) Serum (S) and Platelet Rich Plasma (CB-PRP) preparations on Growth Factor content and in vitro cell wound healing}, \emph{International Journal of Molecular Sciences}, \url{10.3390/ijms231810701} (2022 Sep 14)
+  \enumicon{0.05}{article.png} S. Valente, C. Ciavarella, G. Astolfi, E. Bergantin, \textbf{N. Curti}, M. Buzzi, L. Fontana, P. Versura, \paperTitle{Impact of Freeze-Drying of Cord Blood (CB) Serum (S) and Platelet Rich Plasma (CB-PRP) preparations on Growth Factor content and in vitro cell wound healing}, \journal{International Journal of Molecular Sciences}, \url{10.3390/ijms231810701} (2022 Sep 14)
 
-  \enumicon{0.05}{article.png}18. I. Budimir, E. Giampieri, E. Saccenti, M. S. Diez, M. Tarozzi, D. Dall'Olio, A. Merlotti, \textbf{N. Curti}, D. Remondini, G. Castellani, C. Sala, \emph{Intraspecies characterization of bacteria via evolutionary modeling of protein domains}, \emph{Scientific Reports}, \url{10.21203/rs.3.rs-1664972} (2022 Sep 22)
+  \enumicon{0.05}{article.png} I. Budimir, E. Giampieri, E. Saccenti, M. S. Diez, M. Tarozzi, D. Dall'Olio, A. Merlotti, \textbf{N. Curti}, D. Remondini, G. Castellani, C. Sala, \paperTitle{Intraspecies characterization of bacteria via evolutionary modeling of protein domains}, \journal{Scientific Reports}, \url{10.21203/rs.3.rs-1664972} (2022 Sep 22)
 
-  \itemicon{0.05}{article.png}19. \textbf{N. Curti} \& G. Levi, E. Giampieri, G. Castellani, D. Remondini, \emph{A network approach for low-dimensional signatures from high-throughput data}, \emph{Scientific Reports}, \url{10.1038/s41598-022-25549-9} (2022 Dec 23)
+  \enumicon{0.05}{article.png} \textbf{N. Curti} \& G. Levi, E. Giampieri, G. Castellani, D. Remondini, \paperTitle{A network approach for low-dimensional signatures from high-throughput data}, \journal{Scientific Reports}, \url{10.1038/s41598-022-25549-9} (2022 Dec 23)
 
- \itemicon{0.05}{article.png}20. \textbf{N. Curti} \&, Y. Merli, C. Zengarini, E. Giampieri, A. Merlotti, D. Dall'Olio, E. Marcelli, T. Bianchi, G. Castellani, \emph{Effectiveness of semi-supervised active learning in automated wound image segmentation}, \emph{International Journal of Molecular Sciences}, \url{10.3390/ijms24010706} (2022 Dec 31)
+  \enumicon{0.05}{article.png} \textbf{N. Curti} \&, Y. Merli, C. Zengarini, E. Giampieri, A. Merlotti, D. Dall'Olio, E. Marcelli, T. Bianchi, G. Castellani, \paperTitle{Effectiveness of semi-supervised active learning in automated wound image segmentation}, \journal{International Journal of Molecular Sciences}, \url{10.3390/ijms24010706} (2022 Dec 31)
 
-\end{enumerate}
+  \enumicon{0.05}{article.png} R. Biondi, M. Renzulli, R. Golfieri, \textbf{N. Curti$^\dagger$}, G. Carlini, C. Sala, E. Giampieri, D. Remondini, G. Vara, A. Cattabriga, M. A. Cocozza, L. V. Pastore, A. Palmeri, N. Brandi, L. Scarpetti, G. Tanzarella, M. Cescon, M. Ravaioli, G. Castellani, F. Coppola, \paperTitle{Machine learning pipeline for the automated prediction of MicroVascular Invasion in HepatoCellular Carcinomas}, \journal{Applied Science}, \url{10.3390/app13031371} (2023 Jan 20)
+
+  \enumicon{0.05}{article.png} S. Polizzi \& \textbf{N. Curti}, L. Dall'Olio, L. Cercenelli, L. Fontana, N. Valsecchi, E. Marcelli, G. Castellani, P. Versura, \paperTitle{Characterization of pupillary light response features for the classification of patients with Optic Neuritis}, \journal{Applied Science}, \url{10.3390/app13031520} (2023 Jan 20)
+
+\end{paperlist}
 
 
 % \vspace*{0.5cm}
 % \section*{\scshape{Pubblicazioni - Work in progress}}
 
-% \begin{itemize}
+% \begin{paperlist}
 
-%   \itemicon{0.05}{article.png} C. Fiscone \& \textbf{N. Curti}, M. Ceccarelli, D. Remondini, C. Testa, R. Lodi, C. Tonon, D. N. Manners, G. Castellani, \emph{Generalizing the Enhanced-Deep-Super-Resolution neural network to brain MR images: a retrospective study on the Cam-CAN dataset}, \emph{???}, \url{???} (2023 ???)
+%   \enumicon{0.05}{article.png} C. Fiscone \& \textbf{N. Curti}, M. Ceccarelli, D. Remondini, C. Testa, R. Lodi, C. Tonon, D. N. Manners, G. Castellani, \paperTitle{Generalizing the Enhanced-Deep-Super-Resolution neural network to brain MR images: a retrospective study on the Cam-CAN dataset}, \journal{???}, \url{???} (2023 ???)
 
-%   \itemicon{0.05}{article.png} \textbf{N. Curti} \& Y. Merli, C. Zengarini, A. Merlotti, D. Dall'Olio, E. Marcelli, G. Castellani, T. Bianchi, E. Giampieri, \emph{Automated prediction of Photographic Wound Assessment Tool in Chronic Wound images}, \emph{???}, \url{???} (2023 ???)
+%   \enumicon{0.05}{article.png} \textbf{N. Curti} \& Y. Merli, C. Zengarini, A. Merlotti, D. Dall'Olio, E. Marcelli, G. Castellani, T. Bianchi, E. Giampieri, \paperTitle{Automated prediction of Photographic Wound Assessment Tool in Chronic Wound images}, \journal{???}, \url{???} (2023 ???)
 
-%   \itemicon{0.05}{article.png} \textbf{N. Curti} \& G. Carlini, S. Valente, E. Giampieri, A. Merlotti, D. Dall'Olio, C. Sala, E. Marcelli, G. Castellani, G. Pasquinelli, \emph{Fully automated estimation of glomerular basement membrane thickness via active semi-supervised learning model}, \emph{???}, \url{???} (2023 ???)
+%   \enumicon{0.05}{article.png} \textbf{N. Curti} \& G. Carlini, S. Valente, E. Giampieri, A. Merlotti, D. Dall'Olio, C. Sala, E. Marcelli, G. Castellani, G. Pasquinelli, \paperTitle{Fully automated estimation of glomerular basement membrane thickness via active semi-supervised learning model}, \journal{???}, \url{???} (2023 ???)
 
-%   \itemicon{0.05}{article.png} R. Biondi, M. Renzulli, R. Golfieri, \textbf{N. Curti$^\dagger$}, G. Carlini, C. Sala, E. Giampieri, D. Remondini, G. Vara, A. Cattabriga, M. A. Cocozza, L. V. Pastore, A. Palmeri, N. Brandi, L. Scarpetti, G. Tanzarella, M. Cescon, M. Ravaioli, G. Castellani, F. Coppola \emph{Machine learning pipeline for the automated prediction of MicroVascular Invasion in HepatoCellular Carcinomas}, \emph{Applied Science}, \url{???} (2023 ???)
+%   \enumicon{0.05}{article.png} G. Carlini, C. Gaudiano, R. Golfieri, \textbf{N. Curti$^\dagger$}, R. Biondi, L. Bianchi, R. Schiavina, E. Brunocilla, F. Giunchi, D. Caruso, A. Merlotti, D. Dall'Olio, C. Sala, S. Pandolfi, D. Remondini, A. Rustici, L. V. Pastore, L. Scarpetti, B. Bortolani, E. Marcelli, F. Coppola, G. Castellani, \paperTitle{Effectiveness of radiomic ZOT features in the automated dis-crimination of oncocytoma from clear cell renal cancer}, \journal{Journal of Personalized Medicine}, \url{???} (2023 ???)
 
-%   \itemicon{0.05}{article.png} G. Carlini, C. Gaudiano, R. Golfieri, \textbf{N. Curti$^\dagger$}, R. Biondi, L. Bianchi, R. Schiavina, E. Brunocilla, F. Giunchi, D. Caruso, A. Merlotti, D. Dall'Olio, C. Sala, S. Pandolfi, D. Remondini, A. Rustici, L. V. Pastore, L. Scarpetti, B. Bortolani, E. Marcelli, F. Coppola, G. Castellani, \emph{Effectiveness of radiomic ZOT features in the automated dis-crimination of oncocytoma from clear cell renal cancer}, \emph{Journal of Personalized Medicine}, \url{???} (2023 ???)
+%   \enumicon{0.05}{article.png} D. Buschi \& \textbf{N. Curti}, V. Cola, G. Carlini, C. Sala, D. Dall'Olio, G. Castellani, E. Pizzi, S. Del Magno, A. Foglia, M. Giunti, L. Pisoni, E. Giampieri, \paperTitle{Automated wound image segmentation: transfer learning from human to pet via active semi-supervised learning}, \journal{???}, \url{???} (2023 ???)
 
-%   \itemicon{0.05}{article.png} S. Polizzi \& \textbf{N. Curti}, L. Dall'Olio, L. Cercenelli, L. Fontana, N. Valsecchi, E. Marcelli, G. Castellani, P. Versura, \emph{Characterization of pupillary light response features for the classification of patients with Optic Neuritis}, \emph{Applied Science}, \url{???} (2023 ???)
-
-%   \itemicon{0.05}{article.png} D. Buschi \& \textbf{N. Curti}, V. Cola, G. Carlini, C. Sala, D. Dall'Olio, G. Castellani, E. Pizzi, S. Del Magno, A. Foglia, M. Giunti, L. Pisoni, E. Giampieri, \emph{Automated wound image segmentation: transfer learning from human to pet via active semi-supervised learning}, \emph{???}, \url{???} (2023 ???)
-
-% \end{itemize}
+% \end{paperlist}
 
 
 \vspace*{0.5cm}
 \section*{\scshape{Open Access Archive}}
 
-\begin{itemize}
+\begin{paperlist}
 
-  \itemicon{0.05}{article.png} \textbf{N. Curti}, E. Giampieri, G. Levi, G. Castellani, D. Remondini, \emph{DNetPRO: A network approach for low-dimensional signatures from high-throughput data}, \emph{BioRxiv}, \url{10.1101/773622} (2019 Sep 19)
+  \enumicon{0.05}{article.png} \textbf{N. Curti}, E. Giampieri, G. Levi, G. Castellani, D. Remondini, \paperTitle{DNetPRO: A network approach for low-dimensional signatures from high-throughput data}, \journal{BioRxiv}, \url{10.1101/773622} (2019 Sep 19)
 
-  \itemicon{0.05}{code.png} \textbf{N. Curti} \& D. Dall'Olio, D. Remondini, G. Castellani, E. Giampieri, \emph{rFBP: Replicated Focusing Belief Propagation algorithm}, \emph{Journal of Open Source Software}, \url{10.21105/joss.02663} (2020 Oct 20)
+  \enumicon{0.05}{code.png} \textbf{N. Curti} \& D. Dall'Olio, D. Remondini, G. Castellani, E. Giampieri, \paperTitle{rFBP: Replicated Focusing Belief Propagation algorithm}, \journal{Journal of Open Source Software}, \url{10.21105/joss.02663} (2020 Oct 20)
 
-  \itemicon{0.05}{code.png} R. Biondi \& \textbf{N. Curti}, E. Giampieri, G. Castellani, \emph{COVID-19 Lung Segmentation}, \emph{Journal of Open Source Software}, \url{10.21105/joss.03447} (2021 Sep 30)
+  \enumicon{0.05}{code.png} R. Biondi \& \textbf{N. Curti}, E. Giampieri, G. Castellani, \paperTitle{COVID-19 Lung Segmentation}, \journal{Journal of Open Source Software}, \url{10.21105/joss.03447} (2021 Sep 30)
 
-\end{itemize}
+\end{paperlist}
 
 
 \vspace*{0.5cm}
 \section*{\scshape{Conference abstracts}}
 
-\begin{itemize}
+\begin{paperlist}
 
-  \itemicon{0.05}{abstract.png} D. Dall'Olio, \textbf{N. Curti}, A. Bazzani, D. Remondini, G. Castellani, \emph{Classification of Genome Wide Association data by Belief Propagation Neural network}, \emph{CCS 2019}
+  \enumicon{0.05}{abstract.png} D. Dall'Olio, \textbf{N. Curti}, A. Bazzani, D. Remondini, G. Castellani, \paperTitle{Classification of Genome Wide Association data by Belief Propagation Neural network}, \journal{CCS 2019}
 
-  \itemicon{0.05}{abstract.png} C. Mengucci \& \textbf{N. Curti}, E. Giampieri, G. Castellani, D. Remondini, \emph{Introducing the Complex Human Interactions in MEdical Records and Atlases Network - CHIMERA}, \emph{CCS 2019}
+  \enumicon{0.05}{abstract.png} C. Mengucci \& \textbf{N. Curti}, E. Giampieri, G. Castellani, D. Remondini, \paperTitle{Introducing the Complex Human Interactions in MEdical Records and Atlases Network - CHIMERA}, \journal{CCS 2019}
 
-  \itemicon{0.05}{poster.png} C. Fiscone, \textbf{N. Curti}, M. Ceccarelli, D. N. Manners, G. Castellani, R. Lodi, D. Remondini, C. Tonon, C. Testa, \emph{Super Resolution of T$_1$w and T$_2$w MRI using deep neural networks: brain images from CamCan dataset}, \emph{GIDRM 2020}, \emph{ISMRM 2021}, [poster session]
+  \enumicon{0.05}{poster.png} C. Fiscone, \textbf{N. Curti}, M. Ceccarelli, D. N. Manners, G. Castellani, R. Lodi, D. Remondini, C. Tonon, C. Testa, \paperTitle{Super Resolution of T$_1$w and T$_2$w MRI using deep neural networks: brain images from CamCan dataset}, \journal{GIDRM 2020}, [poster session]
 
-  \itemicon{0.05}{abstract.png} C. Fiscone, \textbf{N. Curti}, M. Ceccarelli, D. N. Manners, G. Castellani, R. Lodi, D. Remondini, C. Tonon, C. Testa, \emph{Exploring the use of Enhanced-Deep-Super-Resolution neural network: a retrospective study on the CamCAN brain MRI Dataset}, \emph{ISMRM 2021}
+  \enumicon{0.05}{abstract.png} C. Fiscone, \textbf{N. Curti}, M. Ceccarelli, D. N. Manners, G. Castellani, R. Lodi, D. Remondini, C. Tonon, C. Testa, \paperTitle{Exploring the use of Enhanced-Deep-Super-Resolution neural network: a retrospective study on the CamCAN brain MRI Dataset}, \journal{ISMRM 2021}
 
-  \itemicon{0.05}{abstract.png} \textbf{N. Curti}, E. Giampieri, D. Dall'Olio, C. Sala, G. Castellani, \emph{Semi-supervised active learning in automated wound image segmentation via smartphone mobile App}, \emph{ICMMB 2022}
+  \enumicon{0.05}{abstract.png} \textbf{N. Curti}, E. Giampieri, D. Dall'Olio, C. Sala, G. Castellani, \paperTitle{Semi-supervised active learning in automated wound image segmentation via smartphone mobile App}, \journal{ICMMB 2022}
 
-\end{itemize}
+\end{paperlist}
 
 
 \vspace*{0.5cm}
 \section*{\scshape{Open Source Software}}
 
-\begin{tabular}{cclp{11cm}}
+\begin{tabular}{cclp{12cm}}
 
-  \href{https://github.com/Nico-Curti/DNetPRO}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}    & \scshape{DNetPRO}         & \emph{Discriminant Analysis with Network PROcessing}                        \\
-  \href{https://github.com/Nico-Curti/NumPyNet}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                         & \scshape{NumPyNet}        & \emph{Neural Networks library in pure numpy}                                \\
-  \href{https://github.com/Nico-Curti/Openslide}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}  & \scshape{Openslide}       & \emph{C library for reading virtual slide images}                           \\
-  \href{https://github.com/Nico-Curti/Byron}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}      & \scshape{Byron}           & \emph{Build your own neural network}                                        \\
-  \href{https://github.com/Nico-Curti/rFBP}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}       & \scshape{rFBP}            & \emph{Replicated Focusing Belief Propagation algorithm}                     \\
-  \href{https://github.com/Nico-Curti/plasticity}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png} & \scshape{plasticity}      & \emph{Unsupervised Neural Networks with biological-inspired learning rules} \\
-  \href{https://github.com/Nico-Curti/scorer}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}     & \scshape{scorer}          & \emph{Machine Learning Scorer Library}                                      \\
-  \href{https://github.com/Nico-Curti/ParseArgs}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png}                           & \scshape{ParseArgs}       & \emph{Simple command line parser in C++}                                    \\
-  \href{https://github.com/Nico-Curti/easyDAG}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png}                             & \scshape{easyDAG}         & \emph{Simple template DAG scheduler in c++}                                 \\
-  \href{https://github.com/Nico-Curti/genetic}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png}                             & \scshape{genetic}         & \emph{Examples about genetic algorithms for parallel computing}             \\
-  \href{https://github.com/Nico-Curti/shut}{\icon{0.025}{github_logo.png}} & \icon{0.020}{bash.jpg} \icon{0.05}{pwsh.png}         & \scshape{shut}            & \emph{Shell Utilities and Installers for no root users}                     \\
-  \href{https://github.com/Nico-Curti/cardio}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                           & \scshape{cardio}          & \emph{Pulse oximetry data processing and classification}                    \\
-  \href{https://github.com/Nico-Curti/BlendNet}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                         & \scshape{BlendNet}        & \emph{Network viewer with Blender support}                                  \\
-  \href{https://github.com/Nico-Curti/SysDyn}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}     & \scshape{SysDyn}          & \emph{System Dynamics script utilities}                                     \\
-  \href{https://github.com/Nico-Curti/nocs}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png}                                & \scshape{nocs}            & \emph{NOCS (Not Only Colliding Spheres) exact 2D gas dynamics framework}    \\
-  \href{https://github.com/Nico-Curti/rSGD}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}       & \scshape{rSGD}            & \emph{Replicated Stochastic Gradient Descent algorithm}                     \\
-  \href{https://github.com/Nico-Curti/Walkers}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}    & \scshape{Walkers}         & \emph{Random Walk and Optimizer Simulator}                                  \\
-  \href{https://github.com/Nico-Curti/CryptoSocket}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                     & \scshape{CryptoSocket}    & \emph{TCP/IP Client Server with RSA cryptography}                           \\
-  \href{https://github.com/Nico-Curti/FiloBluService}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                   & \scshape{FiloBluService}  & \emph{FiloBlu Service Manager for text message processing}                  \\
-  \href{https://github.com/Nico-Curti/anonymize-slide}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                  & \scshape{anonymize-slide} & \emph{Delete the label from a whole-slide image}                            \\
+  \href{https://github.com/Nico-Curti/DNetPRO}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}             & \scshape{DNetPRO}             & \emph{Discriminant Analysis with Network PROcessing}                        \\
+  \href{https://github.com/Nico-Curti/NumPyNet}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                                  & \scshape{NumPyNet}            & \emph{Neural Networks library in pure numpy}                                \\
+  \href{https://github.com/Nico-Curti/Openslide}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}           & \scshape{Openslide}           & \emph{C library for reading virtual slide images}                           \\
+  \href{https://github.com/Nico-Curti/Byron}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}               & \scshape{Byron}               & \emph{Build your own neural network}                                        \\
+  \href{https://github.com/Nico-Curti/rFBP}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}                & \scshape{rFBP}                & \emph{Replicated Focusing Belief Propagation algorithm}                     \\
+  \href{https://github.com/Nico-Curti/plasticity}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}          & \scshape{plasticity}          & \emph{Unsupervised Neural Networks with biological-inspired learning rules} \\
+  \href{https://github.com/Nico-Curti/scorer}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}              & \scshape{scorer}              & \emph{Machine Learning Scorer Library}                                      \\
+  \href{https://github.com/Nico-Curti/ParseArgs}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png}                                    & \scshape{ParseArgs}           & \emph{Simple command line parser in C++}                                    \\
+  \href{https://github.com/Nico-Curti/easyDAG}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png}                                      & \scshape{easyDAG}             & \emph{Simple template DAG scheduler in c++}                                 \\
+  \href{https://github.com/Nico-Curti/genetic}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png}                                      & \scshape{genetic}             & \emph{Examples about genetic algorithms for parallel computing}             \\
+  \href{https://github.com/Nico-Curti/shut}{\icon{0.025}{github_logo.png}} & \icon{0.020}{bash.jpg} \icon{0.05}{pwsh.png}                  & \scshape{shut}                & \emph{Shell Utilities and Installers for no root users}                     \\
+  \href{https://github.com/Nico-Curti/cardio}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                                    & \scshape{cardio}              & \emph{Pulse oximetry data processing and classification}                    \\
+  \href{https://github.com/Nico-Curti/BlendNet}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                                  & \scshape{BlendNet}            & \emph{Network viewer with Blender support}                                  \\
+  \href{https://github.com/Nico-Curti/SysDyn}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}              & \scshape{SysDyn}              & \emph{System Dynamics script utilities}                                     \\
+  \href{https://github.com/Nico-Curti/nocs}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png}                                         & \scshape{nocs}                & \emph{NOCS (Not Only Colliding Spheres) exact 2D gas dynamics framework}    \\
+  \href{https://github.com/Nico-Curti/rSGD}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}                & \scshape{rSGD}                & \emph{Replicated Stochastic Gradient Descent algorithm}                     \\
+  \href{https://github.com/Nico-Curti/Walkers}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png}             & \scshape{Walkers}             & \emph{Random Walk and Optimizer Simulator}                                  \\
+  \href{https://github.com/Nico-Curti/CryptoSocket}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                              & \scshape{CryptoSocket}        & \emph{TCP/IP Client Server with RSA cryptography}                           \\
+  \href{https://github.com/Nico-Curti/FiloBluService}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                            & \scshape{FiloBluService}      & \emph{FiloBlu Service Manager for text message processing}                  \\
+  \href{https://github.com/Nico-Curti/anonymize-slide}{\icon{0.025}{github_logo.png}} & \icon{0.025}{python.png}                           & \scshape{anonymize-slide}     & \emph{Delete the label from a whole-slide image}                            \\
+  \href{https://github.com/Nico-Curti/ITKGraphThickness3D}{\icon{0.025}{github_logo.png}} & \icon{0.025}{cpp.png} \icon{0.025}{python.png} & \scshape{ITKGraphThickness3D} & \emph{ITK module to compute graph from 3D thickness}                        \\
 
 \end{tabular}
 
