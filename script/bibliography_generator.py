@@ -84,12 +84,32 @@ HEADER = r'''
 \rhead{Nico Curti}
 \rfoot{\thepage}
 \cfoot{}
+
+\newcounter{itemnumber}
+
+\newenvironment{paperlist}{%
+  \setcounter{itemnumber}{0}%
+  \begin{list}{}{}%
+}{\end{list}}
+
 \renewcommand{\headrulewidth}{0.4pt}
 \newcommand{\quotes}[1]{``#1''}
 \newcommand{\itemicon}[2]{\item[{\includegraphics[scale=#1]{#2}}]}
-\newcommand{\enumicon}[2]{\item[{\includegraphics[scale=#1]{#2}}]}
+\newcommand{\enumicon}[2]{% Image, Number
+\stepcounter{itemnumber}%
+\item[{\includegraphics[scale=#1]{#2}}] \theitemnumber.
+}
 \newcommand{\icon}[2]{\includegraphics[scale=#1]{#2}}
 
+\newcommand{\legend}[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\newcommand{\journal}[1]{\underline{#1}}
+\newcommand{\paperTitle}[1]{\emph{#1}}
 
 \begin{document}
 
