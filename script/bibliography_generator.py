@@ -29,8 +29,16 @@ HEADER = r'''
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+
+\ifdefined\eng
+  \usepackage[english]{babel}
+\else
+  \usepackage[italian]{babel}
+\fi
+
 \usepackage{graphicx}
+\usepackage{iflang}
+\usepackage{longtable}
 
 %\usepackage[backend=biber]{biblatex}
 \usepackage{cv} % backbone style
@@ -38,9 +46,12 @@ HEADER = r'''
 %\usepackage{fontawesome} % beautiful icons!!
 \usepackage{fontawesome5} % very beautiful icons!!
 \usepackage{pifont} % more styles for bullet
+\usepackage{csquotes}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[colorlinks=true, allcolors=Blue]{hyperref}
 
+\usepackage[most]{tcolorbox}
+\usepackage{wrapfig}
 \usepackage{siunitx}
 \usepackage{tikz}
 \newcommand*{\priority}[1]{\begin{tikzpicture}[scale=0.15]%
@@ -54,7 +65,7 @@ HEADER = r'''
 % Space before section headings
 \titlespacing{\section}{0pt}{2ex}{1ex}
 
-\graphicspath{{./img/}}
+\graphicspath{{./img/}{./qr/}}
 
 \ifdefined\signed
   \newcommand{\SignatureImage}[2][]{%
@@ -71,7 +82,7 @@ HEADER = r'''
 \name{Nico Curti}
 \image{io.png}
 \info{
- \faUniversity      & Dept. of Experimental, Diagnostic and Specialty Medicine of Bologna University\\
+ \faUniversity      & Dept. of Physics and Astronomy of Bologna University\\
  \faMapMarker*      & Bologna (Italy)\\
  \faPhone           & +39 333 997 93 99\\
  \faPaperPlane      & nico.curti2@unibo.it\\
@@ -80,7 +91,11 @@ HEADER = r'''
 }
 
 \pagestyle{fancy}
-\lhead{Curriculum vitae}
+\IfLanguageName{italian} {
+  \lhead{Curriculum vitae e scientifico-professionale}
+} {
+  \lhead{Curriculum vitae}
+}
 \rhead{Nico Curti}
 \rfoot{\thepage}
 \cfoot{}
@@ -100,6 +115,10 @@ HEADER = r'''
 \item[{\includegraphics[scale=#1]{#2}}] \theitemnumber.
 }
 \newcommand{\icon}[2]{\includegraphics[scale=#1]{#2}}
+\newcommand{\qr}[2]{% Image, Number
+\stepcounter{itemnumber}%
+\raisebox{-.75\height}{\includegraphics[scale=#1]{#2}} \theitemnumber.
+}
 
 \newcommand{\legend}[1]{%
   \begingroup
@@ -110,6 +129,7 @@ HEADER = r'''
 
 \newcommand{\journal}[1]{\underline{#1}}
 \newcommand{\paperTitle}[1]{\emph{#1}}
+
 
 \begin{document}
 

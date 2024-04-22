@@ -43,6 +43,9 @@ publications: ## Build list of publications only
 metrics: ## Extract metrics from Google Scholar and update plots
 	cd script && python metrics.py && cd ..
 
+generate-qr: ## Generate QR code for publications
+	cd script && ./generate_qr.sh 1> /dev/null && cd ..
+
 ##
 ## utils and help
 ##

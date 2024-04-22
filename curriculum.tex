@@ -14,6 +14,7 @@
 
 \usepackage{graphicx}
 \usepackage{iflang}
+\usepackage{longtable}
 
 %\usepackage[backend=biber]{biblatex}
 \usepackage{cv} % backbone style
@@ -40,7 +41,7 @@
 % Space before section headings
 \titlespacing{\section}{0pt}{2ex}{1ex}
 
-\graphicspath{{./img/}}
+\graphicspath{{./img/}{./qr/}}
 
 \ifdefined\signed
   \newcommand{\SignatureImage}[2][]{%
@@ -90,6 +91,10 @@
 \item[{\includegraphics[scale=#1]{#2}}] \theitemnumber.
 }
 \newcommand{\icon}[2]{\includegraphics[scale=#1]{#2}}
+\newcommand{\qr}[2]{% Image, Number
+\stepcounter{itemnumber}%
+\raisebox{-.75\height}{\includegraphics[scale=#1]{#2}} \theitemnumber.
+}
 
 \newcommand{\legend}[1]{%
   \begingroup
@@ -182,13 +187,16 @@
 }
 
 \hspace*{-0.5cm}
-\begin{tabular}{llp{10cm}}
+\begin{tabular}{llp{11cm}}
 
-  \icon{0.05}{project.png} \quad 2017 & EU HARMONY                    & \emph{Data Analytics and Big Biomedical data integration for hematological malignancies, including the set-up of a pan European computing facility} \\
-  \icon{0.05}{project.png} \quad 2019 & EU HARMONY-PLUS               & \emph{Data Analytics and Big Biomedical data integration for hematological malignancies, including the set-up of a pan European computing facility} \\
-  \icon{0.05}{project.png} \quad 2021 & H2020 GENOMED4ALL             & \emph{Genomics and Personalized Medicine for all though Artificial Intelligence in Haematological Diseases . Great interaction for the AI methods, the Federated Learning approach and the data standardization methods} \\
-  \icon{0.05}{project.png} \quad 2022 & EU SYNTHEMA                   & \emph{Synthetic generation of haematological data over federated computing frameworks} \\
-  \icon{0.05}{project.png} \quad 2022 & AIRC IG (Prof. G. Castellani) & \emph{Artificial intelligence for genomics and personalized medicine in myelodysplastic syndromes (MDS)} \\
+  \icon{0.05}{project.png} \quad 2017 & HARMONY                 & \emph{IMI2-H2020, project no. 116026, Alliance for Resourceful Medicines Offensive against Neoplasms in HematologY} \\
+  \icon{0.05}{project.png} \quad 2017 & IM4Future               & \emph{EU project ITN (International Training Network), project no. 721815, Innovative training in methods for future data} \\
+  \icon{0.05}{project.png} \quad 2019 & HARMONY-PLUS            & \emph{IMI2-H2020, project no. 116026, Alliance for Resourceful Medicines Offensive against Neoplasms in HematologY} \\
+  \icon{0.05}{project.png} \quad 2021 & GENOMED4ALL             & \emph{Horizon 2020/2023 program, project no. 101017549, Genomics and Personalized Medicine for all though Artificial Intelligence in Haematological Diseases} \\
+  \icon{0.05}{project.png} \quad 2022 & SYNTHEMA                & \emph{Horizon 2020/2023 program, project no. 1101095530, Synthetic generation of haematological data over federated computing frameworks} \\
+  \icon{0.05}{project.png} \quad 2022 & AIRC IG - G. Castellani & \emph{Artificial intelligence for genomics and personalized medicine in myelodysplastic syndromes (MDS)} \\
+  \icon{0.05}{project.png} \quad 2023 & METASTRA                & \emph{EU project, project no. 101080135, Transforming Fracture Risk Assessment for Cancer patients with Vertebral Metastases} \\
+  \icon{0.05}{project.png} \quad 2023 & TRIGGER                 & \emph{EU project, project no. 101057739, SoluTions foR mItiGatinG climate-induced hEalth thReats} \\
 
 \end{tabular}
 
@@ -207,7 +215,7 @@
 
     \icon{0.05}{education.png} \quad 2020\textemdash2024 (4y) & Professore a contratto presso la Scuola di Scienze dell'Università di Bologna per il corso di laurea in Infermieristica (abilitante alla professione sanitaria di infermiere) per il corso di \emph{Fisica Applicata} - 58200 (24 ore). \\
 
-    \icon{0.05}{education.png} \quad 2022\textemdash2023 (2y) & Corso elettivo \emph{AI4Medicine} presso il Dept. of Experimental, Diagnostic and Specialty Medicine of Bologna University. \\
+    \icon{0.05}{education.png} \quad 2022\textemdash2024 (3y) & Corso elettivo \emph{AI4Medicine} presso il Dept. of Experimental, Diagnostic and Specialty Medicine of Bologna University. \\
 
     \icon{0.05}{education.png} \quad 2023\textemdash2024 (2y) & Tutor per il corso \emph{Progetto Lauree Scientifiche Teoria dei network e intelligenza artificiale tra fisica, biologia e social media} presso il Dipartimento di Fisica e Astronomia dell'Università di Bologna (12 ore). \\
 
@@ -352,7 +360,7 @@
   \icon{0.05}{graduationcap.png} \quad 2018 & Mattia Ceccarelli     & L-30  & \emph{Analisi della complessità di reti neurali generate tramite algoritmi genetici}\\
   \icon{0.05}{degree.png}        \quad 2019 & Alex Baroncini        & LM-17 & \emph{Sviluppo ed ottimizzazione di algoritmi per super-risoluzione ed object detection mediante deep neural network}\\
   \icon{0.05}{graduationcap.png} \quad 2019 & Davide Ravaglia       & L-30  & \emph{Modelling social behavior of Drosophila Melanogaster under the effect of drugs}\\
-  \icon{0.05}{degree.png}        \quad 2019 & Daniele Dall'Olio     & LM-17 & \emph{Applicazione di un algoritmo d’apprendimento basato su sistemi fuori dall’equilibrio a dati di Genome Wide Association}\\
+  \icon{0.05}{degree.png}        \quad 2019 & Daniele Dall'Olio     & LM-17 & \emph{Applicazione di un algoritmo d'apprendimento basato su sistemi fuori dall'equilibrio a dati di Genome Wide Association}\\
   \icon{0.05}{degree.png}        \quad 2020 & Alessandro D'Agostino & LM-17 & \emph{Dataset generation for the training of Neural Networks oriented toward histological image segmentation}\\
   \icon{0.05}{degree.png}        \quad 2020 & Mattia Ceccarelli     & LM-17 & \emph{Optimization and applications of deep learning algorithms for super-resolution in MRI}\\
   \icon{0.05}{graduationcap.png} \quad 2020 & Diego Cardinali       & L-30  & \emph{Classification of Clausocalanus Furcatus motion utilizing the random walk theory}\\
@@ -374,10 +382,10 @@
   \icon{0.05}{graduationcap.png} \quad 2023 & Andrea Corvina        & L-30  & \emph{Applicazione dell'algoritmo edsr di super-resolution ad immagini in microscopia}\\
   \icon{0.05}{degree.png}        \quad 2023 & Sara Peluso           & LM-17 & \emph{Survival analysis in radiomics: a statistical learning approach on 18F-FDG-PET/CT imaging data of patients affected by multiple myeloma}\\
   \icon{0.05}{degree.png}        \quad 2023 & Alessandro Lapi       & LM-17 & \emph{Artificial intelligence application in Digital Onco-Hematology}\\
-  %\icon{0.05}{graduationcap.png} \quad 2024 & Gaia Peroni           & L/SNT1 & \emph{L'ecografia infermieristica nel setting di emergenza-urgenza}\\
-  %\icon{0.05}{degree.png}        \quad 2024 & Alessandro Ceresi     & LM-17 & \emph{}\\
+  \icon{0.05}{degree.png}        \quad 2024 & Alessandro Ceresi     & LM-17 & \emph{Implementation of a radiomics pipeline for survival analysis in multiple myeloma patients using 18F FDG PET/CT images: unveiling prognostic markers and predictive models}\\
+  \icon{0.05}{graduationcap.png} \quad 2024 & Gaia Peroni           & L/SNT1 & \emph{L'ecografia infermieristica nel setting di emergenza-urgenza}\\
+  \icon{0.05}{degree.png}        \quad 2024 & Andrea Buscaroli      & LM/SNT1 & \emph{Tra aspettative e realtà: un'indagine sulla percezione degli studenti di infermieristica nei confronti della professione. Uno studio osservazionale trasversale}\\
   %\icon{0.05}{degree.png}        \quad 2024 & Simone Chiarella      & LM-17 & \emph{}\\
-  %\icon{0.05}{degree.png}        \quad 2024 & Andrea Buscaroli      & LM/SNT1 & \emph{}\\
 \end{tabular}
 
 %\vspace*{0.5cm}
@@ -385,79 +393,80 @@
 \input{./sections/collaborations.tex}
 
 
-\vspace*{0.5cm}
-
+\newpage
 \section*{\scshape{Publications}}
 
-\begin{paperlist}
+\hspace*{-1cm}
+\begin{longtable}{lp{15cm}}
 
-  \enumicon{0.05}{article.png} C. Mizzi, A. Fabbri, S. Rambaldi, F. Bertini, \textbf{N. Curti}, S. Sinigardi, R. Luzi, G. Venturi, M. Davide, G. Muratore, A. Vannelli, A. Bazzani, \paperTitle{Unraveling pedestrian mobility on a road network using ICTs data during great tourist events}, \journal{EPJ Data Science}, \url{10.1140/epjds/s13688-018-0168-2} (2018 Oct 22)
-
-  \enumicon{0.05}{article.png} \textbf{N. Curti} \&\legend{\& These authors contributed equally to this work.} E. Giampieri, A. Ferraro, M. C. Vistoli, E. Ronchieri, D. Cesini, B. Martelli, D. C. Duma and G. Castellani, \paperTitle{Cross-Environment comparison of a bioinformatics pipeline: perspectives for hybrid computations}, \journal{Euro-Par 2018: Parallel Processing Workshops}, \url{10.1007/978-3-030-10549-5_50} (2018 Dec 12)
-
-  \enumicon{0.05}{article.png} V. Boccardi, L. Paolacci, D. Remondini, E. Giampieri, G. Poli, \textbf{N. Curti}, R. Cecchetti, A. Villa, S. Brancorsini, P. Mecocci, \paperTitle{Cognitive decline and Alzheimer's disease in the old age: sex influence on a \quotes{cytokinome signature}}, \journal{Journal of Alzheimer's Disease}, \url{10.3233/JAD-190480} (2019 Nov 26)
-
-  \enumicon{0.05}{article.png} M. Malvisi \& \textbf{N. Curti}, D. Remondini, F. Palazzo, J. L. Williams, G. Pagnacco, G. Minozzi, \paperTitle{Combinatorial Discriminant Analysis applied to RNAseq data reveals a set of 10 transcripts as signatures of infection of cattle with Mycobacterium avium subsp. paratuberculosis}, \journal{Animals}, \url{10.3390/ani10020253} (2020 Feb 5)
-
-  \enumicon{0.05}{article.png} L. Dall'Olio, \textbf{N. Curti}, D. Remondini, Y. Safi Harb, F. W. Asselbergs, G. Castellani, H. Uh, \paperTitle{Prediction of vascular ageing based on smartphone acquired PPG signals}, \journal{Scientific Reports}, \url{10.1038/s41598-020-76816-6} (2020 Nov 12)
-
-  \enumicon{0.05}{article.png} D. Dall'Olio \& \textbf{N. Curti}, E. Fonzi, C. Sala, D. Remondini, G. Castellani, E. Giampieri, \paperTitle{Impact of Concurrency on the Performance of a Whole Exome Sequencing Pipeline}, \journal{BMC Bioinformatics}, \url{10.1186/s12859-020-03780-3} (2021 Feb 9)
-
-  \enumicon{0.05}{article.png} \textbf{N. Curti} \& E. Giampieri, F. Guaraldi, F. Bernabei, L. Cercenelli, G. Castellani, P. Versusa, E. Marcelli, \paperTitle{A fully automated pipeline for a robust conjunctival hyperemia estimation}, \journal{Applied Sciences}, \url{10.3390/app11072978} (2021 Mar 26)
-
-  \enumicon{0.05}{article.png} R. Biondi \& \textbf{N. Curti}, F. Coppola, E. Giampieri, G. Vara, M. Bartoletti, A. Cattabriga, M. A. Cocozza, F. Ciccarese, C. De Benedittis, L. Cercenelli, B. Bortolani, E. Marcelli, L. Pierotti, L. Strigari, P. Viale, R. Golfieri and G. Castellani, \paperTitle{Classification Performance for COVID patient prognosis from automatic AI segmentation – a single center study}, \journal{Applied Science}, \url{10.3390/app11125438} (2021 June 11)
-
-  \enumicon{0.05}{article.png} S. Valente, \textbf{N. Curti}, E. Giampieri, V. Randi, C. Donadei, M. Buzzi, P. Versura, \paperTitle{Impact of blood source and component manufacturing on neurotrophin content and in vitro cell wound healing}, \journal{Blood Transfusion}, \url{10.2450/2021.0116-21} (2021 Aug 3)
-
-  \enumicon{0.05}{article.png} L. Cercenelli, M. Zoli, B. Bortolani, \textbf{N. Curti}, D. Gori, A. Rustici, D. Mazzatenta, E. Marcelli, \paperTitle{3D virtual modeling for morphological characterization of pituitary tumors: preliminary results on its predictive role in tumor resection rate}, \journal{Applied Sciences}, \url{10.3390/app12094275} (2022 Apr 23)
-
-  \enumicon{0.05}{article.png} L. Spagnoli, M. F. Morrone, E. Giampieri, G. Paolani, M. Santoro, \textbf{N. Curti}, F. Coppola, F. Ciccarese, G. Vara, N. Brandi, R. Golfieri, P. Viale, M. Bartoletti, L. Strigari, \paperTitle{Outcome prediction for Sars-CoV-2 patients using machine learning modelling of clinical, radiological and radiomic features derived from chest CT images}, \journal{Applied Sciences}, \url{10.3390/app12094493} (2022 Apr 28)
-
-  \enumicon{0.05}{article.png} G. Filitto, F. Coppola, \textbf{N. Curti$^\dagger$}\legend{$^\dagger$ Corresponding author.}, E. Giampieri, D. Dall'Olio, A. Merlotti, A. Cattabriga, M.A. Cocozza, M.T. Tomassoni, D. Remondini, L. Pierotti, L. Strigari, D. Cuicchi, A. Guido, K. Rihawi, A. D'Errico, F. Di Fabio, G. Poggioli, A.G. Morganti, L. Ricciardiello, R. Golfieri, G. Castellani, \paperTitle{Automated Prediction of the Response to Neoadjuvant Chemoradiotherapy in Patients Affected by Rectal Cancer}, \journal{Cancers}, \url{10.3390/cancers14092231} (2022 Apr 29)
-
-  \enumicon{0.05}{article.png} L. Squadrani \& \textbf{N. Curti}, E. Giampieri, D. Remondini, B. Blais, G. Castellani, \paperTitle{Effectiveness of biological inspired neural network models in learning and patterns memorization}, \journal{Entropy}, \url{10.3390/e24050682} (2022 May 12)
-
-  \enumicon{0.05}{article.png} G. Carlini \& \textbf{N. Curti}, S. Strolin, S. Fanti, D. Remondini, C. Nanni, L. Strigari, and G. Castellani, \paperTitle{Prediction of overall survival in cervical cancer patients using PET/CT radiomic features}, \journal{Applied Science}, \url{10.3390/app12125946} (2022 June 10)
-
-  \enumicon{0.05}{article.png} E. Dika \& \textbf{N. Curti}, E. Giampieri, G. Veronesi, C. Misciali, C. Ricci, G. Castellani, A. Patrizi, E. Marcelli, \paperTitle{Advantages of manual and automatic computer-aided compared to traditional histopathological diagnosis of melanoma: a pilot study}, \journal{Pathology - Research and Practice}, \url{10.1016/j.prp.2022.154014} (2022 July 8)
-
-  \enumicon{0.05}{article.png} \textbf{N. Curti} \& G. Veronesi, E. Dika, C. Misciali, E. Marcelli, E. Giampieri, \paperTitle{Breslow thickness: geometric interpretation, potential pitfalls, and computer automated estimation}, \journal{Pathology - Research and Practice}, \url{10.1016/j.prp.2022.154117} (2022 Sep 5)
-
-  \enumicon{0.05}{article.png} S. Valente, C. Ciavarella, G. Astolfi, E. Bergantin, \textbf{N. Curti}, M. Buzzi, L. Fontana, P. Versura, \paperTitle{Impact of Freeze-Drying of Cord Blood (CB) Serum (S) and Platelet Rich Plasma (CB-PRP) preparations on Growth Factor content and in vitro cell wound healing}, \journal{International Journal of Molecular Sciences}, \url{10.3390/ijms231810701} (2022 Sep 14)
-
-  \enumicon{0.05}{article.png} I. Budimir, E. Giampieri, E. Saccenti, M. S. Diez, M. Tarozzi, D. Dall'Olio, A. Merlotti, \textbf{N. Curti}, D. Remondini, G. Castellani, C. Sala, \paperTitle{Intraspecies characterization of bacteria via evolutionary modeling of protein domains}, \journal{Scientific Reports}, \url{10.21203/rs.3.rs-1664972} (2022 Sep 22)
-
-  \enumicon{0.05}{article.png} \textbf{N. Curti} \& G. Levi, E. Giampieri, G. Castellani, D. Remondini, \paperTitle{A network approach for low-dimensional signatures from high-throughput data}, \journal{Scientific Reports}, \url{10.1038/s41598-022-25549-9} (2022 Dec 23)
-
-  \enumicon{0.05}{article.png} \textbf{N. Curti} \&, Y. Merli, C. Zengarini, E. Giampieri, A. Merlotti, D. Dall'Olio, E. Marcelli, T. Bianchi, G. Castellani, \paperTitle{Effectiveness of semi-supervised active learning in automated wound image segmentation}, \journal{International Journal of Molecular Sciences}, \url{10.3390/ijms24010706} (2022 Dec 31)
-
-  \enumicon{0.05}{article.png} R. Biondi, M. Renzulli, R. Golfieri, \textbf{N. Curti$^\dagger$}, G. Carlini, C. Sala, E. Giampieri, D. Remondini, G. Vara, A. Cattabriga, M. A. Cocozza, L. V. Pastore, A. Palmeri, N. Brandi, L. Scarpetti, G. Tanzarella, M. Cescon, M. Ravaioli, G. Castellani, F. Coppola, \paperTitle{Machine learning pipeline for the automated prediction of MicroVascular Invasion in HepatoCellular Carcinomas}, \journal{Applied Science}, \url{10.3390/app13031371} (2023 Jan 20)
-
-  \enumicon{0.05}{article.png} S. Polizzi \& \textbf{N. Curti}, L. Dall'Olio, L. Cercenelli, L. Fontana, N. Valsecchi, E. Marcelli, G. Castellani, P. Versura, \paperTitle{Characterization of pupillary light response features for the classification of patients with Optic Neuritis}, \journal{Applied Science}, \url{10.3390/app13031520} (2023 Jan 20)
-
-  \enumicon{0.05}{article.png} G. Carlini, C. Gaudiano, R. Golfieri, \textbf{N. Curti$^\dagger$}, R. Biondi, L. Bianchi, R. Schiavina, E. Brunocilla, F. Giunchi, D. Caruso, A. Merlotti, D. Dall'Olio, C. Sala, S. Pandolfi, D. Remondini, A. Rustici, L. V. Pastore, L. Scarpetti, B. Bortolani, E. Marcelli, F. Coppola, G. Castellani, \paperTitle{Effectiveness of radiomic ZOT features in the automated discrimination of oncocytoma from clear cell renal cancer}, \journal{Journal of Personalized Medicine}, \url{10.3390/jpm13030478} (2023 Mar 6)
-
-  \enumicon{0.05}{article.png} D. Buschi \& \textbf{N. Curti}, V. Cola, G. Carlini, C. Sala, D. Dall'Olio, G. Castellani, E. Pizzi, S. Del Magno, A. Foglia, M. Giunti, L. Pisoni, E. Giampieri, \paperTitle{Automated wound image segmentation: transfer learning from human to pet via active semi-supervised learning}, \journal{Animals}, \url{10.3390/ani13060956} (2023 Mar 7)
-
-  \enumicon{0.05}{article.png} N. Derus, \textbf{N. Curti}, E. Giampieri, D. Dall'Olio, C. Sala, G. Castellani, \paperTitle{Synthetic data generation and classification of histopathological image}, \journal{Journal of Mechanics in Medicine and Biology}, \url{10.1142/S0219519423400353} (2023 Mar 9)
-
-  \enumicon{0.05}{article.png} \textbf{N. Curti} \& Y. Merli, C. Zengarini, M. Starace, L. Rapparini, E. Marcelli, G. Carlini, D. Buschi, G. Castellani, T. Bianchi, E. Giampieri, \paperTitle{Automated prediction of Photographic Wound Assessment Tool in Chronic Wound images}, \journal{Journal of Medical Systems}, \url{10.1007/s10916-023-02029-9} (2024 Jan 16)
-
-  \enumicon{0.05}{article.png} C. Fiscone \& \textbf{N. Curti}, M. Ceccarelli, D. Remondini, C. Testa, R. Lodi, C. Tonon, D. N. Manners, G. Castellani, \paperTitle{Generalizing the Enhanced-Deep-Super-Resolution neural network to brain MR images: a retrospective study on the Cam-CAN dataset}, \journal{eNeuro}, \url{???} (2023 Sep 28)
-
-  \enumicon{0.05}{article.png} R. Biondi, A. A La Mattina, J. A Szyszko, S. Polizzi, D. Dall'Olio, \textbf{N. Curti}, G. Castellani, M. Viceconti, \paperTitle{A Semi-Automated and Unsupervised Method for femur segmentation from CT: Development and Validation on a Clinical Cohort}, \journal{Scientific Reports}, \url{???} (2024 Mar 20)
-
-\end{paperlist}
-
+  \qr{0.1}{10.1140_epjds_s13688-018-0168-2.png} & C. Mizzi, A. Fabbri, S. Rambaldi, F. Bertini, \textbf{N. Curti}, S. Sinigardi, R. Luzi, G. Venturi, M. Davide, G. Muratore, A. Vannelli, A. Bazzani, \paperTitle{Unraveling pedestrian mobility on a road network using ICTs data during great tourist events}, \journal{EPJ Data Science}, \url{10.1140/epjds/s13688-018-0168-2} (2018 Oct 22) \\ %(I.F. 4.4)
+  \\
+  \qr{0.1}{10.1007_978-3-030-10549-5_50.png}    & \textbf{N. Curti} \&\legend{\& These authors contributed equally to this work.} E. Giampieri, A. Ferraro, M. C. Vistoli, E. Ronchieri, D. Cesini, B. Martelli, D. C. Duma and G. Castellani, \paperTitle{Cross-Environment comparison of a bioinformatics pipeline: perspectives for hybrid computations}, \journal{Euro-Par 2018: Parallel Processing Workshops}, \url{10.1007/978-3-030-10549-5_50} (2018 Dec 12) \\
+  \\
+  \qr{0.1}{10.3233_JAD-190480.png}              & V. Boccardi, L. Paolacci, D. Remondini, E. Giampieri, G. Poli, \textbf{N. Curti}, R. Cecchetti, A. Villa, S. Brancorsini, P. Mecocci, \paperTitle{Cognitive decline and Alzheimer's disease in the old age: sex influence on a \quotes{cytokinome signature}}, \journal{Journal of Alzheimer's Disease}, \url{10.3233/JAD-190480} (2019 Nov 26) \\ %(I.F. 4.0)
+  \\
+  \qr{0.1}{10.3390_ani10020253.png}             & M. Malvisi \& \textbf{N. Curti}, D. Remondini, F. Palazzo, J. L. Williams, G. Pagnacco, G. Minozzi, \paperTitle{Combinatorial Discriminant Analysis applied to RNAseq data reveals a set of 10 transcripts as signatures of infection of cattle with Mycobacterium avium subsp. paratuberculosis}, \journal{Animals}, \url{10.3390/ani10020253} (2020 Feb 5) \\ %(I.F. 3.0)
+  \\
+  \qr{0.1}{10.1038_s41598-020-76816-6.png}      & L. Dall'Olio, \textbf{N. Curti}, D. Remondini, Y. Safi Harb, F. W. Asselbergs, G. Castellani, H. Uh, \paperTitle{Prediction of vascular ageing based on smartphone acquired PPG signals}, \journal{Scientific Reports}, \url{10.1038/s41598-020-76816-6} (2020 Nov 12) \\ %(I.F. 4.6)
+  \\
+  \qr{0.1}{10.1186_s12859-020-03780-3.png}      & D. Dall'Olio \& \textbf{N. Curti}, E. Fonzi, C. Sala, D. Remondini, G. Castellani, E. Giampieri, \paperTitle{Impact of Concurrency on the Performance of a Whole Exome Sequencing Pipeline}, \journal{BMC Bioinformatics}, \url{10.1186/s12859-020-03780-3} (2021 Feb 9) \\ %(I.F. 3.0)
+  \\
+  \qr{0.1}{10.3390_app11072978.png}             & \textbf{N. Curti} \& E. Giampieri, F. Guaraldi, F. Bernabei, L. Cercenelli, G. Castellani, P. Versusa, E. Marcelli, \paperTitle{A fully automated pipeline for a robust conjunctival hyperemia estimation}, \journal{Applied Sciences}, \url{10.3390/app11072978} (2021 Mar 26) \\ %(I.F. 2.7)
+  \\
+  \qr{0.1}{10.3390_app11125438.png}             & R. Biondi \& \textbf{N. Curti}, F. Coppola, E. Giampieri, G. Vara, M. Bartoletti, A. Cattabriga, M. A. Cocozza, F. Ciccarese, C. De Benedittis, L. Cercenelli, B. Bortolani, E. Marcelli, L. Pierotti, L. Strigari, P. Viale, R. Golfieri and G. Castellani, \paperTitle{Classification Performance for COVID patient prognosis from automatic AI segmentation – a single center study}, \journal{Applied Science}, \url{10.3390/app11125438} (2021 June 11) \\ %(I.F. 2.7)
+  \\
+  \qr{0.1}{10.2450_2021.0116-21.png}            & S. Valente, \textbf{N. Curti}, E. Giampieri, V. Randi, C. Donadei, M. Buzzi, P. Versura, \paperTitle{Impact of blood source and component manufacturing on neurotrophin content and in vitro cell wound healing}, \journal{Blood Transfusion}, \url{10.2450/2021.0116-21} (2021 Aug 3) \\ %(I.F. 3.7)
+  \\
+  \qr{0.1}{10.3390_app12094275.png}             & L. Cercenelli, M. Zoli, B. Bortolani, \textbf{N. Curti}, D. Gori, A. Rustici, D. Mazzatenta, E. Marcelli, \paperTitle{3D virtual modeling for morphological characterization of pituitary tumors: preliminary results on its predictive role in tumor resection rate}, \journal{Applied Sciences}, \url{10.3390/app12094275} (2022 Apr 23) \\ %(I.F. 2.7)
+  \\
+  \qr{0.1}{10.3390_app12094493.png}             & L. Spagnoli, M. F. Morrone, E. Giampieri, G. Paolani, M. Santoro, \textbf{N. Curti}, F. Coppola, F. Ciccarese, G. Vara, N. Brandi, R. Golfieri, P. Viale, M. Bartoletti, L. Strigari, \paperTitle{Outcome prediction for Sars-CoV-2 patients using machine learning modelling of clinical, radiological and radiomic features derived from chest CT images}, \journal{Applied Sciences}, \url{10.3390/app12094493} (2022 Apr 28) \\ %(I.F. 2.7)
+  \\
+  \qr{0.1}{10.3390_cancers14092231.png}         & G. Filitto, F. Coppola, \textbf{N. Curti$^\dagger$}\legend{$^\dagger$ Corresponding author.}, E. Giampieri, D. Dall'Olio, A. Merlotti, A. Cattabriga, M.A. Cocozza, M.T. Tomassoni, D. Remondini, L. Pierotti, L. Strigari, D. Cuicchi, A. Guido, K. Rihawi, A. D'Errico, F. Di Fabio, G. Poggioli, A.G. Morganti, L. Ricciardiello, R. Golfieri, G. Castellani, \paperTitle{Automated Prediction of the Response to Neoadjuvant Chemoradiotherapy in Patients Affected by Rectal Cancer}, \journal{Cancers}, \url{10.3390/cancers14092231} (2022 Apr 29) \\ %(I.F. 5.6)
+  \\
+  \qr{0.1}{10.3390_e24050682.png}               & L. Squadrani \& \textbf{N. Curti}, E. Giampieri, D. Remondini, B. Blais, G. Castellani, \paperTitle{Effectiveness of biological inspired neural network models in learning and patterns memorization}, \journal{Entropy}, \url{10.3390/e24050682} (2022 May 12) \\ %(I.F. 2.5)
+  \\
+  \qr{0.1}{10.3390_app12125946.png}             & G. Carlini \& \textbf{N. Curti}, S. Strolin, S. Fanti, D. Remondini, C. Nanni, L. Strigari, and G. Castellani, \paperTitle{Prediction of overall survival in cervical cancer patients using PET/CT radiomic features}, \journal{Applied Science}, \url{10.3390/app12125946} (2022 June 10) \\ %(I.F. 2.7)
+  \\
+  \qr{0.1}{10.1016_j.prp.2022.154014.png}       & E. Dika \& \textbf{N. Curti}, E. Giampieri, G. Veronesi, C. Misciali, C. Ricci, G. Castellani, A. Patrizi, E. Marcelli, \paperTitle{Advantages of manual and automatic computer-aided compared to traditional histopathological diagnosis of melanoma: a pilot study}, \journal{Pathology - Research and Practice}, \url{10.1016/j.prp.2022.154014} (2022 July 8) \\ %(I.F. 2.8)
+  \\
+  \qr{0.1}{10.1016_j.prp.2022.154117.png}       & \textbf{N. Curti} \& G. Veronesi, E. Dika, C. Misciali, E. Marcelli, E. Giampieri, \paperTitle{Breslow thickness: geometric interpretation, potential pitfalls, and computer automated estimation}, \journal{Pathology - Research and Practice}, \url{10.1016/j.prp.2022.154117} (2022 Sep 5) \\ %(I.F. 2.8)
+  \\
+  \qr{0.1}{10.3390_ijms231810701.png}           & S. Valente, C. Ciavarella, G. Astolfi, E. Bergantin, \textbf{N. Curti}, M. Buzzi, L. Fontana, P. Versura, \paperTitle{Impact of Freeze-Drying of Cord Blood (CB) Serum (S) and Platelet Rich Plasma (CB-PRP) preparations on Growth Factor content and in vitro cell wound healing}, \journal{International Journal of Molecular Sciences}, \url{10.3390/ijms231810701} (2022 Sep 14) \\ %(I.F. 5.6)
+  \\
+  \qr{0.1}{10.21203_rs.3.rs-1664972.png}        & I. Budimir, E. Giampieri, E. Saccenti, M. S. Diez, M. Tarozzi, D. Dall'Olio, A. Merlotti, \textbf{N. Curti}, D. Remondini, G. Castellani, C. Sala, \paperTitle{Intraspecies characterization of bacteria via evolutionary modeling of protein domains}, \journal{Scientific Reports}, \url{10.21203/rs.3.rs-1664972} (2022 Sep 22) \\ %(I.F. 4.6)
+  \\
+  \qr{0.1}{10.1038_s41598-022-25549-9.png}      & \textbf{N. Curti} \& G. Levi, E. Giampieri, G. Castellani, D. Remondini, \paperTitle{A network approach for low-dimensional signatures from high-throughput data}, \journal{Scientific Reports}, \url{10.1038/s41598-022-25549-9} (2022 Dec 23) \\ %(I.F. 4.6)
+  \\
+  \qr{0.1}{10.3390_ijms24010706.png}            & \textbf{N. Curti} \&, Y. Merli, C. Zengarini, E. Giampieri, A. Merlotti, D. Dall'Olio, E. Marcelli, T. Bianchi, G. Castellani, \paperTitle{Effectiveness of semi-supervised active learning in automated wound image segmentation}, \journal{International Journal of Molecular Sciences}, \url{10.3390/ijms24010706} (2022 Dec 31) \\ %(I.F. 5.6)
+  \\
+  \qr{0.1}{10.3390_app13031371.png}             & R. Biondi, M. Renzulli, R. Golfieri, \textbf{N. Curti$^\dagger$}, G. Carlini, C. Sala, E. Giampieri, D. Remondini, G. Vara, A. Cattabriga, M. A. Cocozza, L. V. Pastore, A. Palmeri, N. Brandi, L. Scarpetti, G. Tanzarella, M. Cescon, M. Ravaioli, G. Castellani, F. Coppola, \paperTitle{Machine learning pipeline for the automated prediction of MicroVascular Invasion in HepatoCellular Carcinomas}, \journal{Applied Science}, \url{10.3390/app13031371} (2023 Jan 20) \\ %(I.F. 2.7)
+  \\
+  \qr{0.1}{10.3390_app13031520.png}             & S. Polizzi \& \textbf{N. Curti}, L. Dall'Olio, L. Cercenelli, L. Fontana, N. Valsecchi, E. Marcelli, G. Castellani, P. Versura, \paperTitle{Characterization of pupillary light response features for the classification of patients with Optic Neuritis}, \journal{Applied Science}, \url{10.3390/app13031520} (2023 Jan 20) \\ %(I.F. 2.7)
+  \\
+  \qr{0.1}{10.3390_jpm13030478.png}             & G. Carlini, C. Gaudiano, R. Golfieri, \textbf{N. Curti$^\dagger$}, R. Biondi, L. Bianchi, R. Schiavina, E. Brunocilla, F. Giunchi, D. Caruso, A. Merlotti, D. Dall'Olio, C. Sala, S. Pandolfi, D. Remondini, A. Rustici, L. V. Pastore, L. Scarpetti, B. Bortolani, E. Marcelli, F. Coppola, G. Castellani, \paperTitle{Effectiveness of radiomic ZOT features in the automated discrimination of oncocytoma from clear cell renal cancer}, \journal{Journal of Personalized Medicine}, \url{10.3390/jpm13030478} (2023 Mar 6) \\ %(I.F. 3.4)
+  \\
+  \qr{0.1}{10.3390_ani13060956.png}             & D. Buschi \& \textbf{N. Curti}, V. Cola, G. Carlini, C. Sala, D. Dall'Olio, G. Castellani, E. Pizzi, S. Del Magno, A. Foglia, M. Giunti, L. Pisoni, E. Giampieri, \paperTitle{Automated wound image segmentation: transfer learning from human to pet via active semi-supervised learning}, \journal{Animals}, \url{10.3390/ani13060956} (2023 Mar 7) \\ %(I.F. 3.0)
+  \\
+  \qr{0.1}{10.1142_S0219519423400353.png}       & N. Derus, \textbf{N. Curti}, E. Giampieri, D. Dall'Olio, C. Sala, G. Castellani, \paperTitle{Synthetic data generation and classification of histopathological image}, \journal{Journal of Mechanics in Medicine and Biology}, \url{10.1142/S0219519423400353} (2023 Mar 9) \\ %(I.F. 0.8)
+  \\
+  \qr{0.1}{10.1007_s10916-023-02029-9.png}      & \textbf{N. Curti} \& Y. Merli, C. Zengarini, M. Starace, L. Rapparini, E. Marcelli, G. Carlini, D. Buschi, G. Castellani, T. Bianchi, E. Giampieri, \paperTitle{Automated prediction of Photographic Wound Assessment Tool in Chronic Wound images}, \journal{Journal of Medical Systems}, \url{10.1007/s10916-023-02029-9} (2024 Jan 16) \\ %(I.F. 5.3)
+  \\
+  \qr{0.1}{10.1038_s41598-024-57618-6.png}      & A. Aldieri, R. Biondi, A. A La Mattina, J. A Szyszko, S. Polizzi, D. Dall'Olio, \textbf{N. Curti}, G. Castellani, M. Viceconti, \paperTitle{Development and validation of a semi-automated and unsupervised method for femur segmentation from CT}, \journal{Scientific Reports}, \url{10.1038/s41598-024-57618-6} (2024 Mar 28) \\ %(I.F. 4.6)
+  \\
+  \qr{0.1}{article.png}                         & C. Fiscone \& \textbf{N. Curti}, M. Ceccarelli, D. Remondini, C. Testa, R. Lodi, C. Tonon, D. N. Manners, G. Castellani, \paperTitle{Generalizing the Enhanced-Deep-Super-Resolution neural network to brain MR images: a retrospective study on the Cam-CAN dataset}, \journal{eNeuro}, \url{???} (2023 Sep 28) %(I.F. 3.4)
+  \\
+\end{longtable}
 
 % \vspace*{0.5cm}
 % \section*{\scshape{Pubblicazioni - Work in progress}}
 
 % \begin{paperlist}
 
-%   \enumicon{0.05}{article.png} \textbf{N. Curti} \& G. Carlini, S. Valente, E. Giampieri, A. Merlotti, D. Dall'Olio, C. Sala, E. Marcelli, G. Castellani, G. Pasquinelli, \paperTitle{Fully automated estimation of glomerular basement membrane thickness via active semi-supervised learning model}, \journal{???}, \url{???} (2024 ???)
+%   \qr{0.1}{article.png} & D. Dall'Olio, F. Magnani, M. Tarozzi, F. Casadei, T. Matteuzzi, \textbf{N. Curti}, A. Merlotti, G. Simonetti, M.G. Della Porta, D. Remondini, G. Castellani, \paperTitle{Emerging Signatures of Hematological Cancers from Gene Expression and Gene Regulations}, \journal{International Journal of Molecular Sciences}, \url{???} (2024 ???) \\ %(I.F. 5.6)
 
-%   \enumicon{0.05}{article.png} S. Dalmonte, M.A. Cocozza, D. Cuicchi, D. Remondini, \textbf{N. Curti$^\dagger$}, P. Castellucci, A. Farolfi, E. Fortunati, A. Cappelli, R. Biondi, A. Cattabriga, G. Poggioli, S. Fanti, F. Coppola, G. Castellani, \paperTitle{Identification of PET/CT radiomic signature for locally recurrent rectal cancer classification}, \journal{Heliyon}, \url{???} (2024 ???)
+%   \qr{0.1}{article.png} & \textbf{N. Curti} \& G. Carlini, S. Valente, E. Giampieri, A. Merlotti, D. Dall'Olio, C. Sala, E. Marcelli, G. Castellani, G. Pasquinelli, \paperTitle{Fully automated estimation of glomerular basement membrane thickness via active semi-supervised learning model}, \journal{???}, \url{???} (2024 ???) \\
+
+%   \qr{0.1}{article.png} & S. Dalmonte, M.A. Cocozza, D. Cuicchi, D. Remondini, \textbf{N. Curti$^\dagger$}, P. Castellucci, A. Farolfi, E. Fortunati, A. Cappelli, R. Biondi, A. Cattabriga, G. Poggioli, S. Fanti, F. Coppola, G. Castellani, \paperTitle{Identification of PET/CT radiomic signature for locally recurrent rectal cancer classification}, \journal{Heliyon}, \url{???} (2024 ???) \\
 
 % \end{paperlist}
 
@@ -497,7 +506,9 @@
 
   \enumicon{0.05}{abstract.png} G. Asti, S. D'Amico, E. Sauta, \textbf{N. Curti}, G. Carlini, N.R. Derus, D. Dall'Olio, C. Sala, L. Dall'Olio, L. Lanino, G. Maggioni, A. Campagna, M. Ubezio, A. Russo, G. Todisco, C.A. Tentori, P. Morandini, M. Bicchieri, M.C. Grondelli, M. Zampini, V. Savevski, A. Santoro, V. Santini, U. Platzbecker, M. Diez-Campelo, P. Fenaux, T. Haferlach, G. Castellani, M. Della Porta, \paperTitle{Synthetic Histopathological Images Generation with Artificial Intelligence to Accelerate Research and Improve Clinical Outcomes in Hematology}, \journal{American Society of Hematology 2023}
 
-  \enumicon{0.05}{poster.png} S. Odorici, \textbf{N. Curti}, N. Di Geronimo, L. Padovani, A. Moramarco, G. Castellani, L. Fontana, P. Versura, \paperTitle{RedAI – L'Iperemia congiuntivale bulbare valutata attraverso l'uso dell'intelligenza artificiale: quanto è rosso un occhio rosso}, \journal{3° Congresso Nazionale S.I.S.O.}, [poster session]
+  \enumicon{0.05}{poster_prize.png} S. Odorici, \textbf{N. Curti}, N. Di Geronimo, L. Padovani, A. Moramarco, G. Castellani, L. Fontana, P. Versura, \paperTitle{RedAI – L'Iperemia congiuntivale bulbare valutata attraverso l'uso dell'intelligenza artificiale: quanto è rosso un occhio rosso}, \journal{3° Congresso Nazionale S.I.S.O.}, [poster session] \textbf{[1st Prize Best Poster]}
+
+  \enumicon{0.05}{poster.png} Y. Merli, \textbf{N. Curti}, M. Starace, E. Marcelli, G. Carlini, D. Buschi, G. Castellani, T. Bianchi, E. Giampieri, B.M. Piraccini, C. Zengarini, \paperTitle{L'intelligenza artificiale nel trattamento delle ferite: cosa fa e dove può portare}, \journal{98° Congresso Nazionale SIDeMaST}, [poster session]
 
 \end{paperlist}
 
