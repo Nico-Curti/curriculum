@@ -20,6 +20,7 @@ You can build the different version of the CV using the `make` command, accordin
  useful info
     make publications        Build list of publications only
     make metrics             Extract metrics from Google Scholar and update plots
+    make generate-qr         Generate QR code for publications
  utils and help
     make clean               Clean files
     make cleanall            Clean all files

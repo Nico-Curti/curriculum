@@ -34,6 +34,7 @@ jobs:
         python3 -m pip install scholarly
         python3 -m pip install pandas seaborn matplotlib
         python3 -m pip install habanero
+        python3 -m pip install amzqr
 
     - name: Install latexmk
       shell: bash
