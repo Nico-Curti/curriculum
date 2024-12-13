@@ -29,9 +29,11 @@ DOI=(
   "10.1007/s10916-023-02029-9"
   "10.1038/s41598-024-57618-6"
   "10.1523/ENEURO.0458-22.2023"
+  "10.1159/000542658"
+  "10.3390/biomedinformatics4040126"
 )
 
 for doi in ${DOI[@]}; do
   output=$(echo $doi | tr / _)
-  amzqr https://doi.org/$doi -v 1 -n ../qr/$output.png
+  amzqr https://doi.org/$doi -v 1 -l H -n ../qr/$output.png
 done

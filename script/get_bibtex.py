@@ -72,7 +72,7 @@ for title in titles:
       assert False
 
     bib.append(bibtex)
-    print('\r% Found {:d} valid articles'.format(len(bib)), end='',
+    print('\rFound {:d} valid articles'.format(len(bib)), end='',
           flush=True, file=sys.stderr)
     break
 
