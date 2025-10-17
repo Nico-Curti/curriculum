@@ -17,8 +17,9 @@ with open(filename, 'r') as fp:
 
 _, *sections = SECTIONS_RE.split(data)
 sections_name = SECTIONS_NAME_RE.findall(data)
-assert 'Publications' in sections_name
-idx = sections_name.index('Publications')
+publication = 'Publications$^*$}\\legend{$^*$ All the publications are accessible scanning the related QR code.}\\legend{\\& These authors contributed equally to this work.}\\legend{$^\\dagger$ Corresponding author.'
+assert publication in sections_name
+idx = sections_name.index(publication)
 bibliography = sections[idx]
 
 HEADER = r'''

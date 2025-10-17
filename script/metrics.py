@@ -13,9 +13,8 @@ __email__ = ['nico.curti2@unibo.it']
 
 # Retrieve the author's data, fill-in, and print
 # Get an iterator for the author results
-search_query = scholarly.search_author('Nico Curti')
-# Retrieve the first result from the iterator
-first_author_result = next(search_query)
+search_query = scholarly.search_author_id('qQvmBEEAAAAJ&hl')
+first_author_result = search_query
 
 # Retrieve all the details for the author
 author = scholarly.fill(first_author_result)
