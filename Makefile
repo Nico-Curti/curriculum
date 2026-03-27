@@ -7,6 +7,9 @@ out = curriculum
 pub = publications.tex
 pub_out = publications
 
+#rel = relazione.tex
+#rel_out = relazione
+
 ##
 ## italian versions
 ##
@@ -18,6 +21,10 @@ ita: $(file) ## Build Italian version
 signed: ## Build Italian version with signature
 	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(file)) -jobname=$(out) -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\signed{1}\input{$(file)}'"
 	$(MAKE) clean
+
+#relazione: ## Build Italian version with signature
+#	latexmk -g -synctex=1 -interaction=nonstopmode -file-line-error -pdf $(basename $(rel)) -jobname=$(rel_out) -pdflatex="/usr/bin/pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\signed{1}\input{$(rel)}'"
+#	$(MAKE) clean
 
 ##
 ## english versions
@@ -70,6 +77,12 @@ clean: ## Clean files
 	@$(remove) $(pub_out).fls 2> $(empty)
 	@$(remove) $(pub_out).synctex.gz 2> $(empty)
 
+# @$(remove) $(rel).blg 2> $(empty)
+# @$(remove) $(rel).log 2> $(empty)
+# @$(remove) $(rel).out 2> $(empty)
+# @$(remove) $(rel).fls 2> $(empty)
+# @$(remove) $(rel).synctex.gz 2> $(empty)
+
 .PHONY: cleanall
 cleanall: $(out) clean ## Clean all files
 	@$(remove) $(out).aux 2> $(empty)
@@ -83,6 +96,10 @@ cleanall: $(out) clean ## Clean all files
 	@$(remove) $(pub_out).aux 2> $(empty)
 	@$(remove) $(pub_out).bbl 2> $(empty)
 	@$(remove) $(pub_out).fdb_latexmk 2> $(empty)
+
+#	@$(remove) $(rel).aux 2> $(empty)
+#	@$(remove) $(rel).bbl 2> $(empty)
+#	@$(remove) $(rel).fdb_latexmk 2> $(empty)
 
 help:: ## show this help text.
 	@gawk -vG=$$(tput setaf 2) -vR=$$(tput sgr0) ' \
